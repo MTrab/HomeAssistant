@@ -1,0 +1,15 @@
+police:
+  name: Aktiver Blink
+police_christian_loft:
+  name: Christian Loft
+police_christian_bord:
+  name: Christian Bord
+police_livingroom:
+  name: Sofabord
+police_diningroom:
+  name: Spisebord
+police_bryggers:
+  name: Bryggers
+
+courtyard_ten:
+  name: 10 min Gårdsplads

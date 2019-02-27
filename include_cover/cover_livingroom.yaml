@@ -1,0 +1,74 @@
+- platform: mqtt
+  name: "Glasparti-Venstre"
+  command_topic: "rullegardin/Stue-Venstre/in"
+  state_topic: "rullegardin/Stue-Venstre/out"
+  position_topic: "rullegardin/Stue-Venstre/out"
+  set_position_topic: "rullegardin/Stue-Venstre/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'
+  
+- platform: mqtt
+  name: "Glasparti-Midt"
+  command_topic: "rullegardin/Stue-Center/in"
+  state_topic: "rullegardin/Stue-Center/out"
+  position_topic: "rullegardin/Stue-Center/out"
+  set_position_topic: "rullegardin/Stue-Center/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'
+
+- platform: mqtt
+  name: "Glasdør"
+  command_topic: "rullegardin/Stue-Hojre/in"
+  state_topic: "rullegardin/Stue-Hojre/out"
+  position_topic: "rullegardin/Stue-Hojre/out"
+  set_position_topic: "rullegardin/Stue-Hojre/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'
+
+- platform: mqtt
+  name: "Stue Vindue"
+  command_topic: "rullegardin/Stue-Vindue/in"
+  state_topic: "rullegardin/Stue-Vindue/out"
+  position_topic: "rullegardin/Stue-Vindue/out"
+  set_position_topic: "rullegardin/Stue-Vindue/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'
+
+- platform: group
+  name: "Glasparti"
+  entities:
+    - cover.glasparti_venstre
+    - cover.glasparti_midt
+    - cover.glasdor

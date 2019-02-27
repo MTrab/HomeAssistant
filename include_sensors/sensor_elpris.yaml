@@ -1,0 +1,4 @@
+- platform: nordpool
+  currency: 'DKK'
+  region: 'DK1'
+  name: El pris

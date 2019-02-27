@@ -1,0 +1,8 @@
+notify_test:
+  sequence:
+    - service: notify.html5
+      data_template:
+        message: "Dette er en notification test"
+        title: "Notification Test"
+        target: Morten_Oneplus
+    

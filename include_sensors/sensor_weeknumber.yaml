@@ -1,0 +1,4 @@
+- platform: mqtt
+  name: weeknumber
+  icon: mdi:calendar
+  state_topic: "sensor/weeknumber"

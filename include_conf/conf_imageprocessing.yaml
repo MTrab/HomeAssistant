@@ -1,0 +1,32 @@
+#- platform: openalpr_local
+# - platform: openalpr_cloud
+#   api_key: sk_04496ac6c1d22a9a4a54c911
+#   region: eu
+#   scan_interval: 10000
+#   source:
+#     - entity_id: camera.frontdoor
+
+# - platform: facebox
+#   ip_address: 172.16.200.17
+#   port: 8080
+#   source:
+#     - entity_id: camera.hallway
+#     - entity_id: camera.frontdoor
+#     - entity_id: camera.driveway
+#     - entity_id: camera.carport
+
+# - platform: opencv
+#   name: Front Door Cars
+#   scan_interval: 10000
+#   source:
+#     - entity_id: camera.frontdoor
+#   classifier:
+#     cars: opencv_classifiers/cars.xml
+
+# - platform: dlib_face_detect
+#   source:
+#     # - entity_id: camera.hallway
+#     - entity_id: camera.frontdoor
+#     - entity_id: camera.driveway
+#     - entity_id: camera.carport
+#     # - entity_id: camera.test

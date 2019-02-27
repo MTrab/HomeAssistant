@@ -1,0 +1,12 @@
+cover.stue_vindue:
+  icon: mdi:blinds
+  friendly_name: Vindue
+cover.glasparti:
+  icon: mdi:blinds
+  friendly_name: Glasparti
+cover.terrasse_gardin:
+  icon: mdi:blinds
+  friendly_name: Terrassedør
+cover.spisestue_gardin:
+  icon: mdi:blinds
+  friendly_name: Vindue

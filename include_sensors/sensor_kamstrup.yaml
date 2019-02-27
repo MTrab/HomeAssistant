@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    battery_kamstrup:
+      friendly_name: "Kamstrup Datalogger"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.sensor.kamstrup_reader_7_1 -%}
+          {{ states.sensor.kamstrup_reader_7_1.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}

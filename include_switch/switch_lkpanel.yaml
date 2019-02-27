@@ -1,0 +1,47 @@
+- platform: mqtt
+  name: LK-Panel-1
+  command_topic: "cmnd/lkpanel/LKTest/COMMAND"
+  state_topic: "stat/lkpanel/LKTest/BUTTON1"
+  availability_topic: "tele/lkpanel/LKTest/LWT"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+
+- platform: mqtt
+  name: LK-Panel-2
+  command_topic: "cmnd/lkpanel/LKTest/COMMAND"
+  state_topic: "stat/lkpanel/LKTest/BUTTON2"
+  availability_topic: "tele/lkpanel/LKTest/LWT"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+
+- platform: mqtt
+  name: LK-Panel-3
+  command_topic: "cmnd/lkpanel/LKTest/COMMAND"
+  state_topic: "stat/lkpanel/LKTest/BUTTON3"
+  availability_topic: "tele/lkpanel/LKTest/LWT"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+
+- platform: mqtt
+  name: LK-Panel-4
+  command_topic: "cmnd/lkpanel/LKTest/COMMAND"
+  state_topic: "stat/lkpanel/LKTest/BUTTON4"
+  availability_topic: "tele/lkpanel/LKTest/LWT"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

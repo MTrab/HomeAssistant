@@ -1,0 +1,8 @@
+device_tracker.mt_oneplus:
+  friendly_name: Morten
+device_tracker.christian_motorola:
+  friendly_name: Christian
+device_tracker.michael_huawei:
+  friendly_name: Michael
+device_tracker.britta_mobil:
+  friendly_name: Britta

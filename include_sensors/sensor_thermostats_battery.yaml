@@ -1,0 +1,102 @@
+- platform: template
+  sensors:
+    battery_heat_diningroom:
+      friendly_name: "Spisestue"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.spisestue_11 -%}
+          {{ states.climate.spisestue_11.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_bathroom:
+      friendly_name: "Badeværelse"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.toilet_13 -%}
+          {{ states.climate.toilet_13.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_kitchen:
+      friendly_name: "Køkken"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.kitchen_9 -%}
+          {{ states.climate.kitchen_9.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_bedroom:
+      friendly_name: "Soveværelse"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.bedroom_14 -%}
+          {{ states.climate.bedroom_14.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_repos:
+      friendly_name: "Repos"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.repos_15 -%}
+          {{ states.climate.repos_15.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_michael:
+      friendly_name: "Michael"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.michael_18 -%}
+          {{ states.climate.michael_18.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_christian:
+      friendly_name: "Christian"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.christian_16 -%}
+          {{ states.climate.christian_16.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_livingroom:
+      friendly_name: "Stue"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.stue_31 -%}
+          {{ states.climate.stue_31.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_hall:
+      friendly_name: "Gang"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.hall_12 -%}
+          {{ states.climate.hall_12.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_heat_trainroom:
+      friendly_name: "Togrum"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.trainroom_17 -%}
+          {{ states.climate.trainroom_17.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}

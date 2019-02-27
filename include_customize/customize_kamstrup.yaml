@@ -1,0 +1,33 @@
+sensor.kamstrup_reader_7_1:
+  friendly_name: Målerstand
+  unit_of_measurement: kWh
+sensor.kamstrup_reader_7_3:
+  friendly_name: Effekt Total
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_4:
+  friendly_name: Effekt Fase 1
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_5:
+  friendly_name: Effekt Fase 2
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_6:
+  friendly_name: Effekt Fase 3
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_7:
+  friendly_name: Spænding Fase 1
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_8:
+  friendly_name: Spænding Fase 2
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_9:
+  friendly_name: Spænding Fase 3
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_10:
+  friendly_name: Strøm Fase 1
+  unit_of_measurement: A
+sensor.kamstrup_reader_7_11:
+  friendly_name: Strøm Fase 2
+  unit_of_measurement: A
+sensor.kamstrup_reader_7_12:
+  friendly_name: Strøm Fase 3
+  unit_of_measurement: A

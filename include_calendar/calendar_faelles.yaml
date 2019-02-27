@@ -1,0 +1,4 @@
+- platform: caldav
+  url: !secret icloud_url
+  username: !secret icloud_user
+  password: !secret icloud_pass

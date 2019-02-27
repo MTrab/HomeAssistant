@@ -1,0 +1,20 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "node-red-configurable-ping": "~1.0.1",
+        "node-red-contrib-advanced-ping": "~1.2.0",
+        "node-red-contrib-blindcontroller": "~4.6.0",
+        "node-red-contrib-google-home-notify-volume-adjustable": "0.0.10",
+        "node-red-contrib-google-tts": "~1.1.0",
+        "node-red-contrib-schedex": "~1.2.1",
+        "node-red-contrib-summariser": "0.0.9",
+        "node-red-contrib-sunpos": "~1.4.0",
+        "node-red-contrib-wait-paths": "~0.2.12",
+        "node-red-contrib-weekday": "~0.1.0",
+        "node-red-node-darksky": "~0.1.17",
+        "node-red-node-forecastio": "~0.1.13"
+    }
+}

@@ -1,0 +1,35 @@
+# - alias: 'Hass start'
+#   trigger:
+#     platform: homeassistant
+#     event: start
+#   action:
+#     - service: mqtt.publish
+#       data:
+#         topic: /rullegardin/terrasse/in
+#         payload: "(update)"
+#         qos: 0
+#     - service: mqtt.publish
+#       data:
+#         topic: /rullegardin/spisestue/in
+#         payload: "(update)"
+#         qos: 0
+#     - service: mqtt.publish
+#       data:
+#         topic: rullegardin/Stue-Venstre/in
+#         payload: "(update)"
+#         qos: 0
+#     - service: mqtt.publish
+#       data:
+#         topic: rullegardin/Stue-Center/in
+#         payload: "(update)"
+#         qos: 0
+#     - service: mqtt.publish
+#       data:
+#         topic: rullegardin/Stue-Hojre/in
+#         payload: "(update)"
+#         qos: 0
+#     - service: mqtt.publish
+#       data:
+#         topic: rullegardin/Stue-Vindue/in
+#         payload: "(update)"
+#         qos: 0

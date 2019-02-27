@@ -1,0 +1,3 @@
+- platform: zoneminder
+  command_on: Mocord
+  command_off: Monitor

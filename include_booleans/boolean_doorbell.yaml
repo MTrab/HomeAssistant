@@ -1,0 +1,17 @@
+# Enheder til lyd
+doorbell_sound_diningroom:
+  name: Spisestue
+doorbell_sound_livingroom:
+  name: Stue
+doorbell_sound_bedroom:
+  name: Soveværelse
+doorbell_sound_bathroom:
+  name: Badeværelse
+doorbell_sound_kitchen:
+  name: Køkken
+
+# Kontrol
+doorbell_control_active:
+  name: Dørklokke aktiv
+doorbell_control_test:
+  name: Test ring

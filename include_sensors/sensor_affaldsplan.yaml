@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: Restaffald
+  state_topic: "affaldsplan/restaffald"
+- platform: mqtt
+  name: Pap
+  state_topic: "affaldsplan/pap"

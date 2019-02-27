@@ -1,0 +1,125 @@
+.widget-baseyr-{{id}} table {
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+  table-layout: fixed !important;
+  font-size: 0.8em;
+}
+
+.widget-baseyr-{{id}} img {
+  filter: drop-shadow(2px 2px 0px #444);
+}
+
+.widget-baseyr-{{id}} .hours td {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.widget-baseyr-{{id}} .hours>td>div {
+  display: flex;
+}
+
+.widget-baseyr-{{id}} .wind {
+  flex-grow: 1;
+  text-align: center;
+  display: inline-block;
+}
+
+.widget-baseyr-{{id}} .wind-left {
+  margin-left: 0.25em;
+}
+
+.widget-baseyr-{{id}} .wind-right {
+  margin-right: 0.25em;
+}
+
+.widget-baseyr-{{id}} .hour {
+  display: inline-block;
+  padding-top: 0.4em;
+  font-size: 1.1em;
+}
+
+.widget-baseyr-{{id}} .markers td {
+  height: 0.2em;
+  border-style: solid;
+  border-width: 0 thin thin 0;
+}
+
+.widget-baseyr-{{id}} .markers td:last-child {
+  border-width: 0 0 thin 0;
+}
+
+.widget-baseyr-{{id}} .symbols {
+}
+
+.widget-baseyr-{{id}} .symbols td {
+  text-align: center;
+  border-style: dashed;
+  border-width: 0 thin 0 0;
+}
+
+.widget-baseyr-{{id}} .symbols td:last-child {
+  border-style: none;
+}
+
+.widget-baseyr-{{id}} .data td {
+  border-style: solid;
+  border-width: thin thin 0 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.widget-baseyr-{{id}} .data td:last-child {
+  border-width: thin 0 0 0;
+}
+
+.widget-baseyr-{{id}} .temp:after {
+  content: attr(data-temp) "°";
+}
+
+.widget-baseyr-{{id}} .temp {
+  color: #ef9c9c;
+}
+
+.widget-baseyr-{{id}} .temp[data-temp^="-"], .temp[data-temp="0"] {
+  color: #a09cef;
+}
+
+.widget-baseyr-{{id}} .data td div {
+  position: relative;
+  height: 2em;
+}
+
+.widget-baseyr-{{id}} .data .temp {
+  position: absolute;
+  top: 0em;
+  left: 0.2em;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.widget-baseyr-{{id}} .data .rain {
+  position: absolute;
+  bottom: 0em;
+  right: 0.2em;
+  font-size: 0.9em;
+}
+
+.widget-baseyr-{{id}} .data .rain:after {
+  content: attr(data-rain) " mm";
+}
+
+.widget-baseyr-{{id}} .data .rain[data-rain="0"]:after {
+  content: "";
+}
+
+.widget-baseyr-{{id}} .disclaimer {
+  display: none;
+  position: absolute;
+  bottom: -1em;
+  right: 0.5em;
+  font-size: 0.5em;
+  color: #888;
+}
+

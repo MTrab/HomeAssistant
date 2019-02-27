@@ -1,0 +1,6 @@
+binary_sensor.rms_2_1:
+  friendly_name: Bevægelse Trappe
+sensor.rms_2_2:
+  friendly_name: Trappe
+sensor.rms_2_3:
+  friendly_name: Trappe

@@ -1,0 +1,53 @@
+<script type="text/x-red" data-help-name="sunpos">
+    <p>Test!! Uses the suncalc module to calculate the current position of the sun at a given location.</p>
+
+    <h3>Inputs</h3>
+      <dl class="message-properties">
+        <dt class="optional">time<span class="property-type">Date</span></dt>
+        <dd>time to compute sun position</dd>
+      </dl>
+
+    <h3>Outputs</h3>
+      <dl class="message-properties">
+        <dt>startTime<span class="property-type">Date</span></dt>
+        <dd>time of day that constitutes the start of daylight hours (inclusive of offset)</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>endTime<span class="property-type">Date</span></dt>
+        <dd>time of day that constitutes the end of daylight hours (inclusive of offset)</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>sunInSky<span class="property-type">boolean</span></dt>
+        <dd>is sun above the horizon</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>altitude<span class="property-type">number</span></dt>
+        <dd>sun altitude above the horizon in degrees</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>azimuth<span class="property-type">number</span></dt>
+        <dd>sun azimuth in degrees, where 0 is North</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>altitudeRadians<span class="property-type">number</span></dt>
+        <dd>sun altitude above the horizon in radians</dd>
+      </dl>
+      <dl class="message-properties">
+        <dt>azimuthRadians<span class="property-type">number</span></dt>
+        <dd>sun azimuth in radians, where 0 is South, a positive value is in the west and negative value in the east</dd>
+      </dl>
+
+    <h3>Details</h3>
+      <p>This node can optionally receive a time via an input message containing <code>msg.time</code> conforming to Javascript Date object, otherwise it will use the current time to calculate the sun position.</p>
+      <p>The start and end time can have an offset specified in minutes.</p>
+      <ul>
+        <li>A negative number brings the time forward. E.g. if the time is sunset and offset is -60, a message will be generated 60 minutes before sunset.</li>
+        <li>A positive number delays the time by the specified number of minutes</li>
+      </ul>
+
+    <h3>References</h3>
+      <ul>
+        <li><a href="https://github.com/alisdairjsmyth/node-red-contrib-sunpos">GitHub</a> - the nodes github repository</li>
+        <li><a href="https://www.npmjs.com/package/suncalc">suncalc</a> - full description of the sunlight time properties</li>
+      </ul>
+</script>

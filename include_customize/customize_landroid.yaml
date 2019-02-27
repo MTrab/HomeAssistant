@@ -1,0 +1,27 @@
+sensor.landroid_battery:
+  friendly_name: Batteri
+  icon: mdi:battery
+sensor.landroid_battery_charging:
+  friendly_name: Lader
+  templates:
+    icon: >
+      if (state === 'false') return 'mdi:battery';
+      return 'mdi:battery-charging-100';
+sensor.landroid_wifi_quality:
+  friendly_name: Wifi
+  icon: mdi:wifi
+sensor.landroid_total_time:
+  friendly_name: Timer
+  icon: mdi:timer
+sensor.landroid_total_distance:
+  friendly_name: Distance
+  icon: mdi:map-marker-distance
+sensor.landroid_status_description:
+  friendly_name: Status
+  icon: mdi:all-inclusive
+sensor.landroid_err_description:
+  friendly_name: Fejl
+  icon: mdi:alert
+sensor.landroid_datetime:
+  friendly_name: Seneste opdatering
+  icon: mdi:update

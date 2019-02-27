@@ -1,0 +1,109 @@
+- platform: mqtt
+  name: landroid_battery
+  state_topic: "landroid/status/batteryLevel"
+  unit_of_measurement: '%'
+- platform: mqtt
+  name: landroid_firmware
+  state_topic: "landroid/status/firmware"
+- platform: mqtt
+  name: landroid_wifi_quality
+  state_topic: "landroid/status/wifiQuality"
+  unit_of_measurement: dBm
+- platform: mqtt
+  name: landroid_total_time
+  state_topic: "landroid/status/totalTime"
+  unit_of_measurement: hours
+- platform: mqtt
+  name: landroid_total_distance
+  state_topic: "landroid/status/totalDistance"
+  unit_of_measurement: meters
+- platform: mqtt
+  name: landroid_battery_charging
+  state_topic: "landroid/status/batteryCharging"
+- platform: mqtt
+  name: landroid_battery_charge_cycles
+  state_topic: "landroid/status/batteryChargeCycle"
+- platform: mqtt
+  name: landroid_battery_voltage
+  state_topic: "landroid/status/batteryVoltage"
+  unit_of_measurement: V
+- platform: mqtt
+  name: landroid_battery_temperature
+  state_topic: "landroid/status/batteryTemperature"
+  unit_of_measurement: '°C'
+- platform: mqtt
+  name: landroid_err_code
+  state_topic: "landroid/status/errorCode"
+- platform: mqtt
+  name: landroid_err_description
+  state_topic: "landroid/status/errorDescription"
+- platform: mqtt
+  name: landroid_status_code
+  state_topic: "landroid/status/statusCode"
+- platform: mqtt
+  name: landroid_status_description
+  state_topic: "landroid/status/statusDescription"
+  # value_template: >-
+    # {% if states.sensor.landroid_status_description.state == "Mowing" %}
+      # "Slår græs"
+    # {% elif states.sensor.landroid_status_description.state == "Home" %}
+      # "Hjemme"
+    # {% else %}
+      # "{{states.sensor.landroid_status_description.state}}"
+    # {% endif %}
+- platform: mqtt
+  name: landroid_datetime
+  state_topic: "landroid/status/dateTime"
+
+- platform: template
+# Outside wire = 4
+  sensors:
+    landroid_status:
+      friendly_name: Status
+      icon_template: >-
+        {% if states.sensor.landroid_status_code.state == "7" or states.sensor.landroid_status_code.state == "32" %}
+          mdi:play
+        {% elif states.sensor.landroid_status_code.state == "1" %}
+          mdi:stop
+        {% elif states.sensor.landroid_status_code.state == "1" and states.sensor.landroid_battery_charging.state == "false"%}
+          {% if states.sensor.landroid_err_code.state == "5" %}
+            mdi:alert-decagram
+          {% else %}
+            mdi:stop
+          {% endif %}
+        {% elif states.sensor.landroid_status_code.state == "1" and states.sensor.landroid_battery_charging.state == "true"%}
+          mdi:battery-charging
+        {% elif states.sensor.landroid_err_code.state == "5" %}
+          mdi:alert-decagram
+        {% elif states.sensor.landroid_status_code.state == "30" %}
+          mdi:home
+        {% elif states.sensor.landroid_err_code.state == "unknown" %}
+          mdi:help
+        {% else %}
+          mdi:alert
+        {% endif %}
+      value_template: >-
+        {% if states.sensor.landroid_status_code.state == "7" %}
+          Slår græs
+        {% elif states.sensor.landroid_status_code.state == "32" %}
+          Klipper kant
+        {% elif states.sensor.landroid_status_code.state == "0" %}
+          Manuel Stop
+        {% elif states.sensor.landroid_status_code.state == "1" %}
+          Hjemme
+          {%- if states.sensor.landroid_battery_charging.state == "true" -%}
+             {{ ' (Lader)' }}
+          {%- elif states.sensor.landroid_err_code.state == "5" -%}
+             {{ ' (Regnvejr)' }}
+          {% endif %}
+        {% elif states.sensor.landroid_err_code.state == "4" %}
+          Udenfor tråden
+        {% elif states.sensor.landroid_err_code.state == "11" %}
+          Bunden i vejret
+        {% elif states.sensor.landroid_status_code.state == "30" %}
+          Kører hjem
+        {% elif states.sensor.landroid_err_code.state == "unknown" %}
+          {{ 'Ukendt' }}
+        {% else %}
+          {{ states.sensor.landroid_err_description.state }} ({{states.sensor.landroid_err_code.state}})
+        {% endif %}

@@ -1,0 +1,16 @@
+widget_type: baseyr
+entity: {{ entity }}
+fields:
+  symbols: ""
+  hours: ""
+  forecast: ""
+  disclaimer: ""
+parameters: []
+icons: []
+static_icons: []
+css: []
+static_css:
+  widget_style: $background_style
+  border_style: "border-color: $gray_dark"
+  table_style: "background-color: #444; color: $white; border-radius: 5px;"
+

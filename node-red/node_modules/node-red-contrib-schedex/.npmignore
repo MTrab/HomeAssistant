@@ -1,0 +1,10 @@
+node_modules
+
+.idea
+
+/*.tgz
+
+.history
+.vscode
+coverage
+.nyc_output

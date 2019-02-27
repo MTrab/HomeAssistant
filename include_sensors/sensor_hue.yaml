@@ -1,0 +1,58 @@
+- platform: template
+  sensors:
+    fyrrum_temperature:
+      friendly_name: Bryggers
+      device_class: temperature
+      unit_of_measurement: '°C'
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.temperature | round(1) }}
+    fyrrum_lightlevel:
+      friendly_name: Bryggers lys niveau
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.light_level }}
+    fyrrum_lux:
+      friendly_name: Bryggers lys lux
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.lx }}
+    fyrrum_dark:
+      friendly_name: Bryggers mørkt
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.dark }}
+    fyrrum_daylight:
+      friendly_name: Bryggers dagslys
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.daylight }}
+    fyrrum_battery:
+      friendly_name: Bryggers Motion Sensor
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {{ states.binary_sensor.fyrrum_motion_sensor.attributes.battery }}
+    hall_temperature:
+      friendly_name: Gang
+      device_class: temperature
+      unit_of_measurement: '°C'
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.temperature | round(1) }}
+    hall_lightlevel:
+      friendly_name: Gang lys niveau
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.light_level }}
+    hall_lux:
+      friendly_name: Gang lys lux
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.lx }}
+    hall_dark:
+      friendly_name: Gang mørkt
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.dark }}
+    hall_daylight:
+      friendly_name: Gang dagslys
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.daylight }}
+    hall_battery:
+      friendly_name: Gang Motion Sensor
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {{ states.binary_sensor.gang_motion_sensor.attributes.battery }}

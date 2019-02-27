@@ -1,0 +1,51 @@
+title: 1. sal
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [10, 10]
+columns: 9
+global_parameters:
+  use_comma: 0
+  precision: 1
+  use_hass_icon: 1
+  namespace: default
+
+light_stairs:
+  widget_type: light
+  entity: light.trappe
+  title: Trappe
+
+light_christian_ledstrip:
+  widget_type: light
+  entity: light.christian_led_strip
+  title: LED Strip Christian
+
+light_christian_loft:
+  widget_type: light
+  entity: light.christian_loft
+  title: Christian Loft
+  
+thermostat_christian:
+  widget_type: input_slider
+  entity: input_number.heat_set_christian
+  title: Christian
+  units: °C
+
+thermostat_trains:
+  widget_type: input_slider
+  entity: input_number.heat_set_trains
+  title: Tog rum
+  units: °C
+
+thermostat_repos:
+  widget_type: input_slider
+  entity: input_number.heat_set_repos
+  title: Repos
+  units: °C
+  
+layout:
+  - include: header
+  - spacer(3x1), light_stairs, light_christian_ledstrip, light_christian_loft
+  - spacer(3x1), thermostat_repos, thermostat_christian, thermostat_trains
+  -
+  -
+  - include: footer

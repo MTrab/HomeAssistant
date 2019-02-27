@@ -1,0 +1,37 @@
+input_boolean.doorbell_control_active:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:bell';
+      return 'mdi:bell-off';
+input_boolean.doorbell_control_test:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:bell-ring';
+      return 'mdi:bell';
+input_boolean.doorbell_sound_diningroom:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:speaker-wireless';
+      return 'mdi:speaker-off';
+input_boolean.doorbell_sound_livingroom:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:speaker-wireless';
+      return 'mdi:speaker-off';
+input_boolean.doorbell_sound_bedroom:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:speaker-wireless';
+      return 'mdi:speaker-off';
+input_boolean.doorbell_sound_bathroom:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:speaker-wireless';
+      return 'mdi:speaker-off';
+input_boolean.doorbell_sound_kitchen:
+  templates:
+    icon: >
+      if (state === 'on') return 'mdi:speaker-wireless';
+      return 'mdi:speaker-off';
+switch.doorbell_5_1:
+  friendly_name: Dørklokke

@@ -1,0 +1,99 @@
+google_actions:
+  filter:
+    include_entities:
+      - light.gang
+      - light.fyrrum
+      - light.kitchen
+      - light.spisebord
+      - light.bedroom_group
+      - light.couch
+      - light.christian_loft
+      - light.christian_led_strip
+      - light.gardsplads
+      - cover.terrasse_gardin
+      - cover.spisestue_gardin
+      - cover.glasparti
+      - cover.stue_vindue
+      - switch.livingroom_tv
+      - climate.spisestue_11
+      - climate.toilet_13
+      - climate.kitchen_9
+      - climate.bedroom_14
+      - climate.repos_15
+      - climate.michael_18
+      - climate.christian_16
+      - climate.stue_31
+      - climate.trainroom_17
+      - climate.hall_12
+  entity_config:
+    light.gang:
+      name: Lyset i gangen
+      room: Gang
+    light.kitchen:
+      name: Loft lys i køkkenet
+      room: Køkken
+    light.spisebord:
+      name: Lyset i spisestuen
+      room: Spisestue
+    light.fyrrum:
+      name: Lyset i bryggerset
+      room: Bryggers
+    light.bedroom_group:
+      name: Loft lys i soveværelset
+      room: Soveværelse
+    light.couch:
+      name: Lyset i stuen
+      room: Stue
+    light.christian_loft:
+      name: Loft LED strips
+      room: Christian
+    light.christian_led_strip:
+      name: LED strip på bordet
+      room: Christian
+    light.gardsplads:
+      name: Lyset i gårdspladsen
+      room: Gårdsplads
+    switch.livingroom_tv:
+      name: Fjernsyn
+      room: Stue
+      aliases:
+        - TV
+        - Fjernsynet
+    cover.glasparti:
+      name: Glasparti
+    cover.stue_vindue:
+      name: "Stue Vindue"
+    cover.terrasse_gardin:
+      name: Terrassedør
+    cover.spisestue_gardin:
+      name: "Spisestue Vindue"
+    climate.hall_12:
+      name: Radiatoren i gangen
+      room: Gang
+    climate.spisestue_11:
+      name: Radiatoren i spisestuen
+      room: Spisestue
+    climate.toilet_13:
+      name: Radiatoren i badeværelset
+      room: Badeværelse
+    climate.kitchen_9:
+      name: Radiatoren i køkkenet
+      room: Køkken
+    climate.bedroom_14:
+      name: Radiatoren i soveværelset
+      room: Soveværelse
+    climate.repos_15:
+      name: Radiatoren på repos
+      room: Repos
+    climate.michael_18:
+      name: Radiatoren på Michaels værelse
+      room: Michael
+    climate.christian_16:
+      name: Radiatoren på Christians værelse
+      room: Christian
+    climate.stue_31:
+      name: Radiatoren i stuen
+      room: Stue
+    climate.trainroom_17:
+      name: Radiatoren ved modeljernbanen
+      room: Togrum

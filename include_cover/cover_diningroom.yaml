@@ -1,0 +1,33 @@
+- platform: mqtt
+  name: "Terrasse Gardin"
+  command_topic: "/rullegardin/terrasse/in"
+  state_topic: "/rullegardin/terrasse/out"
+  position_topic: "/rullegardin/terrasse/out"
+  set_position_topic: "/rullegardin/terrasse/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'
+  
+- platform: mqtt
+  name: "Spisestue Gardin"
+  command_topic: "/rullegardin/spisestue/in"
+  state_topic: "/rullegardin/spisestue/out"
+  position_topic: "/rullegardin/spisestue/out"
+  set_position_topic: "/rullegardin/spisestue/in"
+  retain: false
+  payload_open: "0"
+  payload_close: "100"
+  payload_stop: "(0)"
+  state_open: 0
+  state_closed: 100
+  position_open: 0
+  position_closed: 100
+  optimistic: false
+  value_template: '{{ value_json.set }}'

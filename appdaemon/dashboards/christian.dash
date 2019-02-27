@@ -1,0 +1,33 @@
+title: Christians værelse
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [4, 4]
+columns: 3
+global_parameters:
+  use_comma: 0
+  precision: 1
+  use_hass_icon: 1
+  namespace: default
+
+thermostat_christian:
+  widget_type: input_slider
+  entity: input_number.heat_set_christian
+  title: Radiator
+  units: °C
+
+light_ledstrip:
+  widget_type: light
+  entity: light.christian_led_strip
+  title: LED strip
+
+light_loft:
+  widget_type: light
+  entity: light.christian_loft
+  title: Loft
+
+layout:
+  - include: header_mobile
+  - light_loft, light_ledstrip
+  - spacer, thermostat_christian
+
+

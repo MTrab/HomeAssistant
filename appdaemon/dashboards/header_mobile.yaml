@@ -1,0 +1,23 @@
+clock:
+  widget_type: clock
+  time_format: "24hr"
+  date_format_country: "dk"
+  date_style: "color: orange"
+  time_style: "color: orange"
+
+label_header:
+  widget_type: label
+  title2: Home Control Panel
+  title2_style: "font-size: 40px; color: orange;"
+
+label_week:
+  widget_type: sensor
+  title2: Uge
+  entity: sensor.weeknumber
+  precision: 0
+  title2_style: "color: orange;"
+  value_style: "color: orange;"
+  
+layout:
+  - label_header(3x1)
+  - label_week, clock(2x1)

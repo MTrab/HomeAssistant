@@ -1,0 +1,98 @@
+heat_control_lowerby:
+  name: Sænk med
+  min: 1
+  max: 10
+  step: 1
+  icon: mdi:temperature-celsius
+  unit_of_measurement: °C
+heat_control_min_temp:
+  name: Mindste Temperatur
+  min: 4
+  max: 25
+  step: 1
+  icon: mdi:temperature-celsius
+  unit_of_measurement: °C
+
+# Used for saving values
+heat_save_diningroom:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_bathroom:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_kitchen:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_bedroom:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_repos:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_michael:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_christian:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_livingroom:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_hall:
+  min: 1
+  max: 30
+  step: 0.5
+heat_save_trains:
+  min: 1
+  max: 30
+  step: 0.5
+
+# Used for setting values
+heat_set_diningroom:
+  min: 4
+  max: 28
+  step: 1
+heat_set_bathroom:
+  min: 4
+  max: 28
+  step: 1
+heat_set_kitchen:
+  min: 4
+  max: 28
+  step: 1
+heat_set_bedroom:
+  min: 4
+  max: 28
+  step: 1
+heat_set_repos:
+  min: 4
+  max: 28
+  step: 1
+heat_set_michael:
+  min: 4
+  max: 28
+  step: 1
+heat_set_christian:
+  min: 4
+  max: 28
+  step: 1
+heat_set_livingroom:
+  min: 4
+  max: 28
+  step: 1
+heat_set_hall:
+  min: 4
+  max: 28
+  step: 1
+heat_set_trains:
+  min: 4
+  max: 28
+  step: 1

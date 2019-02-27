@@ -1,0 +1,6 @@
+# - platform: mqtt
+  # name: mysensor_n2_motion
+  # state_topic: "mysensors-1-out/2/1/1/0/16"
+  # payload_on: "1"
+  # payload_off: "0"
+  # device_class: motion

@@ -1,0 +1,5 @@
+bridges:
+  - host: 192.168.1.130
+    filename: phue-1.conf
+  - host: 192.168.1.131
+    filename: phue-2.conf

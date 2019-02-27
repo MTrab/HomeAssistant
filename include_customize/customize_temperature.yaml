@@ -1,0 +1,4 @@
+sensor.kitchen_temperature_4:
+  friendly_name: Køkken
+sensor.trappe_temperature_23:
+  friendly_name: Trappe Opgang

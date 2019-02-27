@@ -1,0 +1,43 @@
+heat_control:
+  name: Automatisk Natsænkning
+  icon: mdi:power
+heat_control_active:
+  name: Natsænkning Aktiv
+  icon: mdi:power
+heat_control_out:
+  name: Alle Ude
+  icon: mdi:power
+heat_control_holidays:
+  name: Ferie
+  icon: mdi:power
+  
+heat_diningroom:
+  name: Spisestue
+  icon: mdi:thermostat-box
+heat_bathroom:
+  name: Badeværelse
+  icon: mdi:thermostat-box
+heat_kitchen:
+  name: Køkken
+  icon: mdi:thermostat-box
+heat_bedroom:
+  name: Soveværelse
+  icon: mdi:thermostat-box
+heat_repos:
+  name: Repos
+  icon: mdi:thermostat-box
+heat_michael:
+  name: Michael
+  icon: mdi:thermostat-box
+heat_christian:
+  name: Christian
+  icon: mdi:thermostat-box
+heat_livingroom:
+  name: Stue
+  icon: mdi:thermostat-box
+heat_hall:
+  name: Gang
+  icon: mdi:thermostat-box
+heat_trains:
+  name: Togrum
+  icon: mdi:thermostat-box

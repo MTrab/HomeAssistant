@@ -1,0 +1,26 @@
+
+{
+    "sunpos" : {
+        "status" : {
+            "node-status-day"   : "day - start: ",
+            "node-status-night" : "night - start: ",
+            "node-status-end"   : "; end: "
+        },
+        "label" : {
+            "lat"         : "Latitude",
+            "lon"         : "Longitude",
+            "start"       : "Start",
+            "startoffset" : "Start Offset",
+            "end"         : "End",
+            "endoffset"   : "End Offset",
+            "name"        : "Name"
+        },
+        "placeholder" : {
+            "lat"         : "51.025",
+            "lon"         : "-1.4",
+            "startoffset" : "0",
+            "endoffset"   : "0",
+            "name"        : "Name"
+        }
+    }
+}

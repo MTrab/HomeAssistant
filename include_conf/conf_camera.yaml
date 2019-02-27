@@ -1,0 +1,17 @@
+- platform: zoneminder
+
+# - platform: generic
+#   still_image_url: >
+#     http://10.254.254.109:8123{{ states.camera.hallway.attributes.entity_picture }}
+#   name: Test
+#   framerate: 1
+
+# - platform: local_file
+#   file_path: test/mt.jpg
+#   name: Test
+
+# - platform: opencv
+#   camera: camera.frontdoor
+#   processor: image_processing.frontdoor_opencv_car
+#   # Optional Parameters
+#   name: OpenCV Camera

@@ -1,0 +1,69 @@
+load_main_panel:
+  widget_type: navigate
+  title: Stue etage
+  icon_active: fa-home
+  icon_inactive: fa-home
+  icon_active_style: "color: orange;"
+  url: /MainPanel
+  widget_style: "background-color: #072300;"
+
+load_1stfloor_panel:
+  widget_type: navigate
+  title: 1. sal
+  icon_active: mdi-floor-plan
+  icon_inactive: mdi-floor-plan
+  icon_active_style: "color: orange;"
+  url: /1stFloorPanel
+  args:
+    timeout: 10
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
+load_eco_heat_panel:
+  widget_type: navigate
+  title: Varmestyring
+  icon_active: fa-thermometer-half
+  icon_inactive: fa-thermometer-half
+  icon_active_style: "color: orange;"
+  url: /eco_heat
+  args:
+    timeout: 10
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
+load_settings_panel:
+  widget_type: navigate
+  title: Indstillinger
+  icon_active: fa-cogs
+  icon_inactive: fa-cogs
+  icon_active_style: "color: orange;"
+  url: /settings
+  args:
+    timeout: 10
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
+load_weather_panel:
+  widget_type: navigate
+  title: Dagens vejr
+  icon_active: mdi-weather-partlycloudy
+  icon_inactive: mdi-weather-partlycloudy
+  icon_active_style: "color: orange;"
+  url: /weather
+  args:
+    timeout: 10
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
+reload:
+  widget_type: reload
+  title: Opdater
+  widget_style: "background-color: #072300;"
+  icon_active_style: "color: orange;"
+
+layout:
+  - spacer(2x1), load_main_panel, load_1stfloor_panel, spacer, reload, load_settings_panel

@@ -1,0 +1,186 @@
+heat_all_out_on:
+  sequence:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_diningroom
+        value: '{{ states.climate.spisestue_11.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_bathroom
+        value: '{{ states.climate.toilet_13.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_kitchen
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_3.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_bedroom
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_4.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_repos
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_5.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_michael
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_6.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_christian
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_7.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_livingroom
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_8.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_hall
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_9.attributes.temperature | float }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.heat_save_trains
+        value: '{{ states.climate.danfoss_z_thermostat_heating_1_10.attributes.temperature | float }}'
+
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.spisestue_11
+        temperature: >-
+          {% if ((states.climate.spisestue_11.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.spisestue_11.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.spisestue_11.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.toilet_13
+        temperature: >-
+          {% if ((states.climate.toilet_13.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_2.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.toilet_13.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.toilet_13.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_3
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_3.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_3.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_3.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_3.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_4
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_4.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_4.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_4.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_4.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_5
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_5.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_5.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_5.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_5.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_6
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_6.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_6.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_6.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_6.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_7
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_7.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_7.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_7.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_7.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_8
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_8.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_8.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_8.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_8.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_9
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_9.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_9.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_9.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_9.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_10
+        temperature: >-
+          {% if ((states.climate.danfoss_z_thermostat_heating_1_10.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) < (states.input_number.heat_control_min_temp.state | float)) and ((states.climate.danfoss_z_thermostat_heating_1_10.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float)) %}
+            {{ states.input_number.heat_control_min_temp.state | float }}
+          {% elif (states.climate.danfoss_z_thermostat_heating_1_10.attributes.temperature | float) > (states.input_number.heat_control_min_temp.state | float) %}
+            {{ (states.climate.danfoss_z_thermostat_heating_1_10.attributes.temperature | float - states.input_number.heat_control_lowerby.state | float) | float }}
+          {% endif %}
+
+heat_all_out_off:
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.spisestue_11
+        temperature: >-
+          {{ states.input_number.heat_save_diningroom.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.toilet_13
+        temperature: >-
+          {{ states.input_number.heat_save_bathroom.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_3
+        temperature: >-
+          {{ states.input_number.heat_save_kitchen.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_4
+        temperature: >-
+          {{ states.input_number.heat_save_bedroom.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_5
+        temperature: >-
+          {{ states.input_number.heat_save_repos.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_6
+        temperature: >-
+          {{ states.input_number.heat_save_michael.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_7
+        temperature: >-
+          {{ states.input_number.heat_save_christian.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_8
+        temperature: >-
+          {{ states.input_number.heat_save_livingroom.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_9
+        temperature: >-
+          {{ states.input_number.heat_save_hall.state | float}}
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.danfoss_z_thermostat_heating_1_10
+        temperature: >-
+          {{ states.input_number.heat_save_trains.state | float}}

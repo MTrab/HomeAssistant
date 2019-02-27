@@ -1,0 +1,19 @@
+heat_eco_start:
+  name: Natsænkning Start
+  has_date: false
+  has_time: true
+
+heat_eco_end:
+  name: Natsænkning Slut
+  has_date: false
+  has_time: true
+  
+heat_eco_start_weekend:
+  name: Natsænkning Start
+  has_date: false
+  has_time: true
+
+heat_eco_end_weekend:
+  name: Natsænkning Slut
+  has_date: false
+  has_time: true

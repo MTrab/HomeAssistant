@@ -1,0 +1,4 @@
+g1:
+  name: Tiles showcase
+  entities:
+    - input_text.dummy_tiles
