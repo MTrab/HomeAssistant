@@ -1,0 +1,3 @@
+- platform: tautulli
+  api_key: !secret tautulli_apikey
+  host: !secret tautulli_host

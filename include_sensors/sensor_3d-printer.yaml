@@ -1,0 +1,17 @@
+- platform: template
+# Outside wire = 4
+  sensors:
+    anet_a8_jobname:
+      value_template: >-
+        {{ states.sensor.anet_a8_3d_printer_current_job.attributes.job_name }}
+    anet_a8_feed_rate:
+      unit_of_measurement: '%'
+      value_template: >-
+        {{ states.sensor.anet_a8_3d_printer_current_job.attributes.feed_rate }}
+    anet_a8_flow_rate:
+      unit_of_measurement: '%'
+      value_template: >-
+        {{ states.sensor.anet_a8_3d_printer_current_job.attributes.flow }}
+    anet_a8_layer:
+      value_template: >-
+        {{ states.sensor.anet_a8_3d_printer_current_job.attributes.current_layer }}

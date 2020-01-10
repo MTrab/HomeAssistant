@@ -1,0 +1,16 @@
+christian_home:
+  zone: home
+  ignored_zones:
+    - fgu_horning
+    - fgu_vaerksteder
+  devices:
+    - person.christian
+  tolerance: 500
+  
+morten_home:
+  zone: home
+  ignored_zones:
+    - faelleden
+  devices:
+    - person.morten
+  tolerance: 500

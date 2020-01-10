@@ -1,0 +1,6 @@
+script.clean_diningroom:
+  friendly_name: Rengør spisestue
+script.clean_kitchen:
+  friendly_name: Rengør køkken
+script.clean_livingroom:
+  friendly_name: Rengør stue

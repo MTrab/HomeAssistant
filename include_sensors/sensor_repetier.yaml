@@ -1,4 +1,0 @@
-- platform: repetier
-  url: http://192.168.1.101
-  port: 3344
-  api_key: 4a236a83-2b0b-45ac-b5cd-f6201a0dac39

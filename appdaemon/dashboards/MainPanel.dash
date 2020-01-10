@@ -21,7 +21,7 @@ light_kitchen:
 
 light_livingroom:
   widget_type: switch
-  entity: light.couch
+  entity: light.livingroom_corner
   title: Stue
   icon_on: mdi-lightbulb
   icon_off: mdi-lightbulb-outline
@@ -30,6 +30,11 @@ light_stairs:
   widget_type: light
   entity: light.trappe
   title: Trappe
+
+light_repos:
+  widget_type: light
+  entity: light.repos
+  title: Repos
 
 light_diningroom:
   widget_type: light
@@ -43,12 +48,12 @@ light_hall:
 
 light_bedroom:
   widget_type: light
-  entity: group.bedroom
+  entity: light.bedroom_group
   title: Soveværelse
 
 light_utility:
   widget_type: light
-  entity: light.fyrrum
+  entity: light.bryggers
   title: Bryggers
 
 light_courtyard:
@@ -58,10 +63,24 @@ light_courtyard:
   icon_on: mdi-lightbulb
   icon_off: mdi-lightbulb-outline
 
+light_carport:
+  widget_type: switch
+  entity: light.carport
+  title: Carport
+  icon_on: mdi-lightbulb
+  icon_off: mdi-lightbulb-outline
+
+light_bathroom:
+  widget_type: switch
+  entity: light.bathroom
+  title: Badeværelse
+  icon_on: mdi-lightbulb
+  icon_off: mdi-lightbulb-outline
+
 light_courtyard_10:
   widget_type: switch
   entity: input_boolean.courtyard_ten
-  title: Gårdsplads 10 min.
+  title: Udendørs 10 min.
   icon_on: mdi-lightbulb
   icon_off: mdi-lightbulb
 
@@ -101,50 +120,62 @@ status_landroid:
       style: "color: red"
 
 thermostat_livingroom:
-  widget_type: input_slider
-  entity: input_number.heat_set_livingroom
+  widget_type: climate
+  entity: climate.netatmo_stue
   title: Stue
-  units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_kitchen:
-  widget_type: input_slider
-  entity: input_number.heat_set_kitchen
+  widget_type: climate
+  entity: climate.netatmo_kokken
   title: Køkken
-  units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_michael:
-  widget_type: input_slider
-  entity: input_number.heat_set_michael
+  widget_type: climate
+  entity: climate.michael_18
   title: Michael
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_diningroom:
-  widget_type: input_slider
-  entity: input_number.heat_set_diningroom
+  widget_type: climate
+  entity: climate.spisestue_11
   title: Spisestue
   units: °C
-
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
+  
 thermostat_hall:
-  widget_type: input_slider
-  entity: input_number.heat_set_hall
+  widget_type: climate
+  entity: climate.hall_12
   title: Gang
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_bedroom:
-  widget_type: input_slider
-  entity: input_number.heat_set_bedroom
+  widget_type: climate
+  entity: climate.bedroom_14
   title: Soveværelse
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_bathroom:
-  widget_type: input_slider
-  entity: input_number.heat_set_bathroom
+  widget_type: climate
+  entity: climate.toilet_13
   title: Badeværelse
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 device_morten:
   widget_type: device_tracker
-  entity: device_tracker.morten_oneplus
+  entity: person.morten
   title: Morten
   state_map:
     "not_home": 'Ude'
@@ -152,7 +183,7 @@ device_morten:
 
 device_christian:
   widget_type: device_tracker
-  entity: device_tracker.christian_motorola
+  entity: person.christian
   title: Christian
   state_map:
     "not_home": 'Ude'
@@ -160,7 +191,7 @@ device_christian:
 
 device_michael:
   widget_type: device_tracker
-  entity: device_tracker.michael_huawei
+  entity: person.michael
   title: Michael
   state_map:
     "not_home": 'Ude'
@@ -168,7 +199,7 @@ device_michael:
 
 device_britta:
   widget_type: device_tracker
-  entity: device_tracker.britta_mobil
+  entity: person.britta
   title: Britta
   state_map:
     "not_home": 'Ude'
@@ -223,7 +254,7 @@ sensor_restaffald:
 
 sensor_pap:
   widget_type: sensor
-  title: Pap
+  title: Pap/Emballage
   title2: Hentes
   entity: sensor.pap
   text_style: "color: orange; font-size: 150%;"
@@ -255,10 +286,24 @@ switch_varme_gang:
   icon_style_active: "color: orange"
   icon_style_inactive: "color: grey"
 
+lock_hoveddor:
+  widget_type: lock
+  title: Hoveddør
+  entity: lock.hoveddor_38
+  icon_style_active: "color: grey"
+  icon_style_inactive: "color: orange"
+
+lock_varksted:
+  widget_type: lock
+  title: Værksted
+  entity: lock.vaerksteds_dor_39
+  icon_style_active: "color: grey"
+  icon_style_inactive: "color: orange"
+
 layout:
   - include: header
   - sensor_out_temp, device_morten, device_britta, device_christian, device_michael, spacer, sensor_restaffald, sensor_pap, status_landroid
   - sensor_out_humidity, light_stairs, light_livingroom, light_kitchen, light_diningroom, light_hall, light_bedroom, light_utility, light_courtyard
   - sensor_wind, thermostat_michael, thermostat_livingroom, thermostat_kitchen, thermostat_diningroom, thermostat_hall, thermostat_bedroom, thermostat_bathroom, cover_terrasse
-  - sensor_baro_pressure, spacer(6x1), light_courtyard_10, cover_spisestue
+  - sensor_baro_pressure, light_repos, light_bathroom, light_carport, lock_hoveddor, lock_varksted, spacer, light_courtyard_10, cover_spisestue
   - include: footer

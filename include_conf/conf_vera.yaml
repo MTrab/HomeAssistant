@@ -1,2 +1,1 @@
-#vera_controller_url: http://192.168.1.161:3480/
-vera_controller_url: http://192.168.1.203:3480/
+vera_controller_url: http://10.254.254.113:3480/

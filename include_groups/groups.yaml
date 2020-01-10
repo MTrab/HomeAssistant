@@ -1,201 +1,201 @@
-livingroom:
-  name: Stue
-  entities:
-    - light.couch
-    - light.sofabord
+# livingroom:
+#   name: Stue
+#   entities:
+#     - light.couch
+#     - light.sofabord
 
-kitchen:
-  name: Køkken
-  entities:
-    - light.kitchen
+# kitchen:
+#   name: Køkken
+#   entities:
+#     - light.kitchen
 
-bedroom:
-  name: Soveværelse
-  entities:
-    - light.bedroom_group
+# bedroom:
+#   name: Soveværelse
+#   entities:
+#     - light.bedroom_group
 
-diningroom:
-  name: Spise Stue
-  entities:
-    - light.spisebord
+# diningroom:
+#   name: Spise Stue
+#   entities:
+#     - light.spisebord
 
-christian:
-  name: Christian
-  entities:
-    - light.christian_led_strip
-    - light.christian_loft
+# christian:
+#   name: Christian
+#   entities:
+#     - light.christian_led_strip
+#     - light.christian_loft
 
-stairs:
-  name: Trappen
-  entities:
-    - light.trappe
+# stairs:
+#   name: Trappen
+#   entities:
+#     - light.trappe
 
-outside:
-  name: Udendørs
-  entities:
-    - light.gardsplads
+# outside:
+#   name: Udendørs
+#   entities:
+#     - light.gardsplads
 
-radiators:
-  name: Radiatorer
-  icon: mdi:temperature-celsius
-  entities:
-    - climate.spisestue_11
-    - climate.toilet_13
-    - climate.kitchen_9
-    - climate.bedroom_14
-    - climate.repos_15
-    - climate.michael_18
-    - climate.christian_16
-    - climate.stue_31
-    - climate.hall_12
-    - climate.trainroom_17
+# radiators:
+#   name: Radiatorer
+#   icon: mdi:temperature-celsius
+#   entities:
+#     - climate.spisestue_11
+#     - climate.toilet_13
+#     - climate.kitchen_9
+#     - climate.bedroom_14
+#     - climate.repos_15
+#     - climate.michael_18
+#     - climate.christian_16
+#     - climate.stue_31
+#     - climate.hall_12
+#     - climate.trainroom_17
 
-heat_control:
-  name: Varmestyring
-  icon: mdi:thermometer
-  control: hidden
-  entities:
-    - input_boolean.heat_control
-    - input_boolean.heat_control_active
-    - input_boolean.heat_control_out
-    - input_number.heat_control_lowerby
-    - input_number.heat_control_min_temp
-    - input_boolean.heat_control_holidays
+# heat_control:
+#   name: Varmestyring
+#   icon: mdi:thermometer
+#   control: hidden
+#   entities:
+#     - input_boolean.heat_control
+#     - input_boolean.heat_control_active
+#     - input_boolean.heat_control_out
+#     - input_number.heat_control_lowerby
+#     - input_number.heat_control_min_temp
+#     - input_boolean.heat_control_holidays
 
-heat_control_weekdays:
-  name: Start/Stop hverdage
-  icon: mdi:folder-clock-outline
-  control: hidden
-  entities:
-    - input_datetime.heat_eco_start
-    - input_datetime.heat_eco_end
+# heat_control_weekdays:
+#   name: Start/Stop hverdage
+#   icon: mdi:folder-clock-outline
+#   control: hidden
+#   entities:
+#     - input_datetime.heat_eco_start
+#     - input_datetime.heat_eco_end
 
-heat_control_weekends:
-  name: Start/Stop weekends
-  icon: mdi:folder-clock-outline
-  control: hidden
-  entities:
-    - input_datetime.heat_eco_start_weekend
-    - input_datetime.heat_eco_end_weekend
+# heat_control_weekends:
+#   name: Start/Stop weekends
+#   icon: mdi:folder-clock-outline
+#   control: hidden
+#   entities:
+#     - input_datetime.heat_eco_start_weekend
+#     - input_datetime.heat_eco_end_weekend
 
-heat_control_group:
-  name: Enheder til varmestyring
-  icon: mdi:power
-  control: hidden
-  entities:
-    - input_boolean.heat_diningroom
-    - input_boolean.heat_bathroom
-    - input_boolean.heat_kitchen
-    - input_boolean.heat_bedroom
-    - input_boolean.heat_repos
-    - input_boolean.heat_michael
-    - input_boolean.heat_christian
-    - input_boolean.heat_livingroom
-    - input_boolean.heat_hall
-    - input_boolean.heat_trains
+# heat_control_group:
+#   name: Enheder til varmestyring
+#   icon: mdi:power
+#   control: hidden
+#   entities:
+#     - input_boolean.heat_diningroom
+#     - input_boolean.heat_bathroom
+#     - input_boolean.heat_kitchen
+#     - input_boolean.heat_bedroom
+#     - input_boolean.heat_repos
+#     - input_boolean.heat_michael
+#     - input_boolean.heat_christian
+#     - input_boolean.heat_livingroom
+#     - input_boolean.heat_hall
+#     - input_boolean.heat_trains
 
-hall:
-  name: Gang
-  entities:
-    - light.gang
+# hall:
+#   name: Gang
+#   entities:
+#     - light.gang
 
-utility:
-  name: Bryggers
-  entities:
-    - light.fyrrum
+# utility:
+#   name: Bryggers
+#   entities:
+#     - light.fyrrum
 
-thermostat_battery:
-  name: Radiator Thermostater
-  control: hidden
-  entities:
-    - sensor.battery_heat_diningroom
-    - sensor.battery_heat_bathroom
-    - sensor.battery_heat_kitchen
-    - sensor.battery_heat_bedroom
-    - sensor.battery_heat_repos
-    - sensor.battery_heat_michael
-    - sensor.battery_heat_christian
-    - sensor.battery_heat_livingroom
-    - sensor.battery_heat_hall
-    - sensor.battery_heat_trainroom
+# thermostat_battery:
+#   name: Radiator Thermostater
+#   control: hidden
+#   entities:
+#     - sensor.battery_heat_diningroom
+#     - sensor.battery_heat_bathroom
+#     - sensor.battery_heat_kitchen
+#     - sensor.battery_heat_bedroom
+#     - sensor.battery_heat_repos
+#     - sensor.battery_heat_michael
+#     - sensor.battery_heat_christian
+#     - sensor.battery_heat_livingroom
+#     - sensor.battery_heat_hall
+#     - sensor.battery_heat_trainroom
 
-mysensors_battery:
-  name: MySensors
-  control: hidden
-  entities:
-    - sensor.battery_doorbell
-    - sensor.battery_kamstrup
+# mysensors_battery:
+#   name: MySensors
+#   control: hidden
+#   entities:
+#     - sensor.battery_doorbell
+#     - sensor.battery_kamstrup
 
-hue_battery:
-  name: Phillips Hue
-  control: hidden
-  entities:
-    - sensor.fyrrum_battery
-    - sensor.hall_battery
+# hue_battery:
+#   name: Phillips Hue
+#   control: hidden
+#   entities:
+#     - sensor.fyrrum_battery
+#     - sensor.hall_battery
 
-doorbell_sound_devices:
-  name: Enheder til dørklokke
-  control: hidden
-  entities:
-    - input_boolean.doorbell_sound_diningroom
-    - input_boolean.doorbell_sound_livingroom
-    - input_boolean.doorbell_sound_bedroom
-    - input_boolean.doorbell_sound_bathroom
-    - input_boolean.doorbell_sound_kitchen
+# doorbell_sound_devices:
+#   name: Enheder til dørklokke
+#   control: hidden
+#   entities:
+#     - input_boolean.doorbell_sound_diningroom
+#     - input_boolean.doorbell_sound_livingroom
+#     - input_boolean.doorbell_sound_bedroom
+#     - input_boolean.doorbell_sound_bathroom
+#     - input_boolean.doorbell_sound_kitchen
 
-doorbell_control:
-  name: Dørklokke
-  control: hidden
-  entities:
-    - input_boolean.doorbell_control_active
-    - input_boolean.doorbell_control_test
+# doorbell_control:
+#   name: Dørklokke
+#   control: hidden
+#   entities:
+#     - input_boolean.doorbell_control_active
+#     - input_boolean.doorbell_control_test
 
-landroid:
-  name: Landroid Status
-  control: hidden
-  entities:
-    - sensor.landroid_datetime
-    - sensor.landroid_status
+# landroid:
+#   name: Landroid Status
+#   control: hidden
+#   entities:
+#     - sensor.landroid_datetime
+#     - sensor.landroid_status
 
-temperature_1stfloor:
-  name: Stue etagen
-  control: hidden
-  entities:
-    - sensor.hall_temperature
-    - sensor.fyrrum_temperature
-    - sensor.kitchen_temperature_4
-    - sensor.trappe_temperature_23
+# temperature_1stfloor:
+#   name: Stue etagen
+#   control: hidden
+#   entities:
+#     - sensor.hall_temperature
+#     - sensor.fyrrum_temperature
+#     - sensor.kitchen_temperature_4
+#     - sensor.trappe_temperature_23
 
-covers_diningroom:
-  name: Gardiner Spisestue
-  control: hidden
-  entities:
-    - cover.terrasse_gardin
-    - cover.spisestue_gardin
+# covers_diningroom:
+#   name: Gardiner Spisestue
+#   control: hidden
+#   entities:
+#     - cover.terrasse_gardin
+#     - cover.spisestue_gardin
 
-covers_livingroom:
-  name: Gardiner Stue
-  control: hidden
-  entities:
-    - cover.glasparti
-    - cover.glasparti_venstre
-    - cover.glasparti_midt
-    - cover.glasdor
-    - cover.stue_vindue
+# covers_livingroom:
+#   name: Gardiner Stue
+#   control: hidden
+#   entities:
+#     - cover.glasparti
+#     - cover.glasparti_venstre
+#     - cover.glasparti_midt
+#     - cover.glasdor
+#     - cover.stue_vindue
 
-kamstrup:
-  name: Kamstrup Elmåler
-  control: hidden
-  entities:
-    - sensor.kamstrup_reader_7_1
-    - sensor.kamstrup_reader_7_3
-    - sensor.kamstrup_reader_7_4
-    - sensor.kamstrup_reader_7_5
-    - sensor.kamstrup_reader_7_6
-    - sensor.kamstrup_reader_7_7
-    - sensor.kamstrup_reader_7_8
-    - sensor.kamstrup_reader_7_9
-    - sensor.kamstrup_reader_7_10
-    - sensor.kamstrup_reader_7_11
-    - sensor.kamstrup_reader_7_12
-    - sensor.battery_kamstrup
+# kamstrup:
+#   name: Kamstrup Elmåler
+#   control: hidden
+#   entities:
+#     - sensor.kamstrup_reader_7_1
+#     - sensor.kamstrup_reader_7_3
+#     - sensor.kamstrup_reader_7_4
+#     - sensor.kamstrup_reader_7_5
+#     - sensor.kamstrup_reader_7_6
+#     - sensor.kamstrup_reader_7_7
+#     - sensor.kamstrup_reader_7_8
+#     - sensor.kamstrup_reader_7_9
+#     - sensor.kamstrup_reader_7_10
+#     - sensor.kamstrup_reader_7_11
+#     - sensor.kamstrup_reader_7_12
+#     - sensor.battery_kamstrup

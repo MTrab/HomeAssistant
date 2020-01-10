@@ -1,0 +1,34 @@
+substitutions:
+  devicename: christian_loft
+  upper_devicename: Christian Loft
+  fallback: Christian Loft
+  platform: ESP8266
+  board: esp01_1m
+  ip: 10.254.254.185
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+
+output:
+  - platform: esp8266_pwm
+    id: red
+    pin: GPIO5
+  - platform: esp8266_pwm
+    id: green
+    pin: GPIO13
+  - platform: esp8266_pwm
+    id: blue
+    pin: GPIO12
+
+light:
+  - platform: rgb
+    id: light_set
+    name: ${upper_devicename}
+    red: red
+    green: green
+    blue: blue

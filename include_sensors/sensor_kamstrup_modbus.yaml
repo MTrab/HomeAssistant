@@ -1,0 +1,81 @@
+- platform: modbus
+  scan_interval: 30
+  registers:
+    - name: Kamstrup Counter
+      hub: kamstrup
+      unit_of_measurement: kWh
+      count: 2
+      register: 8267
+      scale: 0.001
+      precision: 2
+    - name: Kamstrup Total Watt
+      hub: kamstrup
+      unit_of_measurement: kW
+      slave: 1
+      register: 8195
+      count: 2
+      scale: 0.001
+      precision: 2
+    - name: Kamstrup Watt P1
+      hub: kamstrup
+      unit_of_measurement: W
+      count: 2
+      register: 8197
+      precision: 1
+      scale: 0.001
+    - name: Kamstrup Watt P2
+      hub: kamstrup
+      unit_of_measurement: W
+      count: 2
+      register: 8199
+      precision: 1
+      scale: 0.001
+    - name: Kamstrup Watt P3
+      hub: kamstrup
+      unit_of_measurement: W
+      count: 2
+      register: 8201
+      precision: 1
+      scale: 0.001
+    - name: Kamstrup Voltage P1
+      hub: kamstrup
+      unit_of_measurement: V
+      count: 2
+      register: 8211
+      precision: 0
+      scale: 0.001
+    - name: Kamstrup Voltage P2
+      hub: kamstrup
+      unit_of_measurement: V
+      count: 2
+      register: 8213
+      precision: 0
+      scale: 0.001
+    - name: Kamstrup Voltage P3
+      hub: kamstrup
+      unit_of_measurement: V
+      count: 2
+      register: 8215
+      precision: 0
+      scale: 0.001
+    - name: Kamstrup Ampere P1
+      hub: kamstrup
+      unit_of_measurement: A
+      count: 2
+      register: 8217
+      precision: 2
+      scale: 0.01
+    - name: Kamstrup Ampere P2
+      hub: kamstrup
+      unit_of_measurement: A
+      count: 2
+      register: 8219
+      precision: 2
+      scale: 0.01
+    - name: Kamstrup Ampere P3
+      hub: kamstrup
+      unit_of_measurement: A
+      count: 2
+      register: 8221
+      precision: 2
+      scale: 0.01

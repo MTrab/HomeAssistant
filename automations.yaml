@@ -1,1 +1,13 @@
-[]
+- id: '1576516314674'
+  alias: Turn off after 1 second
+  description: Turns off a switch 1 second after it have been turned on
+  trigger:
+  - entity_id: switch.lk_panel_1
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - delay: 1s
+  - entity_id: switch.lk_panel_1
+    service: switch.turn_off

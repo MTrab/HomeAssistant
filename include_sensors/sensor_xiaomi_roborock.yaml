@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    robert_status:
+      friendly_name: Status
+      value_template: >-
+        {{ states.vacuum.robert.attributes.status }}

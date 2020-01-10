@@ -1,0 +1,23 @@
+- platform: ping
+  name: VMWare01
+  host: 192.168.1.153
+  count: 5
+  scan_interval: 300
+
+- platform: ping
+  name: VMWare02
+  host: 192.168.1.151
+  count: 5
+  scan_interval: 300
+
+- platform: ping
+  name: VMWare03
+  host: 192.168.1.152
+  count: 5
+  scan_interval: 300
+
+- platform: ping
+  name: VMWare04
+  host: 192.168.1.150
+  count: 5
+  scan_interval: 300

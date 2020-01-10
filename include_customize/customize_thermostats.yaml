@@ -4,9 +4,9 @@ climate.spisestue_11:
 climate.toilet_13:
   friendly_name: Badeværelse
   min_temp: 4
-climate.kitchen_9:
+climate.netatmo_kokken:
   friendly_name: Køkken
-  min_temp: 4
+  min_temp: 7
 climate.bedroom_14:
   friendly_name: Soveværelse
   min_temp: 4
@@ -19,9 +19,9 @@ climate.michael_18:
 climate.christian_16:
   friendly_name: Christian
   min_temp: 4
-climate.stue_31:
+climate.netatmo_stue:
   friendly_name: Stue
-  min_temp: 4
+  min_temp: 7
 climate.hall_12:
   friendly_name: Gang
   min_temp: 4

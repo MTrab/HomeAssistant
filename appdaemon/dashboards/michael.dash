@@ -10,10 +10,12 @@ global_parameters:
   namespace: default
 
 thermostat_michael:
-  widget_type: input_slider
-  entity: input_number.heat_set_michael
+  widget_type: climate
+  entity: climate.michael_18
   title: Radiator
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 layout:
   - include: header_mobile

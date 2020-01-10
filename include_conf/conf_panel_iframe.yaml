@@ -1,20 +1,8 @@
-mdiindex:
-  title: MDI Icon Index
-  icon: mdi:vector-square
-  url: https://cdn.materialdesignicons.com/2.7.94/
 tasadmin:
   title: Tasmota Admin
   icon: mdi:lightbulb-on
   url: !secret tasadmin
-ide:
-  title: IDE
-  icon: mdi:code-braces
-  url: !secret hasside
-grafana:
-  title: Grafana
-  icon: mdi:chart-timeline
-  url: !secret grafana
-nodered:
-  title: Node-RED
-  icon: mdi:nodejs
-  url: !secret nodered
+#ide:
+#  title: IDE
+#  icon: mdi:code-braces
+#  url: !secret hasside

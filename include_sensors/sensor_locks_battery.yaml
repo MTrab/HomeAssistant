@@ -1,0 +1,22 @@
+- platform: template
+  sensors:
+    battery_lock_frontdoor:
+      friendly_name: "Hoveddør"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.lock.hoveddor_38 -%}
+          {{ states.lock.hoveddor_38.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    battery_lock_varksted:
+      friendly_name: "Værksted"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.lock.vaerksteds_dor_39 -%}
+          {{ states.lock.vaerksteds_dor_39.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}

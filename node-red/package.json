@@ -6,15 +6,23 @@
     "dependencies": {
         "node-red-configurable-ping": "~1.0.1",
         "node-red-contrib-advanced-ping": "~1.2.0",
-        "node-red-contrib-blindcontroller": "~4.6.0",
+        "node-red-contrib-blindcontroller": "~4.8.5",
+        "node-red-contrib-castv2": "~1.1.6",
+        "node-red-contrib-google-home-notifier-offline": "~0.1.0",
         "node-red-contrib-google-home-notify-volume-adjustable": "0.0.10",
-        "node-red-contrib-google-tts": "~1.1.0",
-        "node-red-contrib-schedex": "~1.2.1",
+        "node-red-contrib-google-tts": "~1.1.1",
+        "node-red-contrib-home-assistant-websocket": "~0.17.1",
+        "node-red-contrib-mios": "~0.2.0",
+        "node-red-contrib-os": "~0.1.7",
+        "node-red-contrib-schedex": "~1.6.6",
         "node-red-contrib-summariser": "0.0.9",
-        "node-red-contrib-sunpos": "~1.4.0",
-        "node-red-contrib-wait-paths": "~0.2.12",
+        "node-red-contrib-sun-position": "~0.5.4",
+        "node-red-contrib-sunpos": "~1.4.1",
+        "node-red-contrib-wait-paths": "~0.3.2",
+        "node-red-contrib-wavenet": "~2.5.1",
         "node-red-contrib-weekday": "~0.1.0",
-        "node-red-node-darksky": "~0.1.17",
-        "node-red-node-forecastio": "~0.1.13"
+        "node-red-node-darksky": "~0.1.18",
+        "node-red-node-forecastio": "~0.1.13",
+        "node-red-node-tail": "~0.1.0"
     }
 }

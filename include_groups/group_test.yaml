@@ -1,70 +1,70 @@
-test:
-  name: Test
-  control: hidden
-  entities:
-    - sensor.rain_24_hours_total
-    - sensor.rain_7_days_total
-    - switch.livingroom_tv
-    - switch.switch01_27
-    - switch.switch02_28
-    - input_boolean.presence_override
-    - sensor.el_pris
+# test:
+#   name: Test
+#   control: hidden
+#   entities:
+#     - sensor.rain_24_hours_total
+#     - sensor.rain_7_days_total
+#     - switch.livingroom_tv
+#     - switch.switch01_27
+#     - switch.switch02_28
+#     - input_boolean.presence_override
+#     - sensor.el_pris
 
-effect_police:
-  name: Politiblink
-  control: hidden
-  entities:
-    - input_boolean.police
-    - input_boolean.police_christian_loft
-    - input_boolean.police_christian_bord
-    - input_boolean.police_livingroom
-    - input_boolean.police_diningroom
-    - input_boolean.police_bryggers
+# effect_police:
+#   name: Politiblink
+#   control: hidden
+#   entities:
+#     - input_boolean.police
+#     - input_boolean.police_christian_loft
+#     - input_boolean.police_christian_bord
+#     - input_boolean.police_livingroom
+#     - input_boolean.police_diningroom
+#     - input_boolean.police_bryggers
 
-zw100_test:
-  name: Z-Wave Test
-  control: hidden
-  entities:
-    - binary_sensor.kitchen_pir_3
-    - switch.kitchen_pir_3
-    - sensor.kitchen_hum_6
-    - sensor.kitchen_light_5
-    - sensor.kitchen_temperature_4
-    - sensor.kitchen_uv_7
-    - switch.kitchen_uv_7
+# zw100_test:
+#   name: Z-Wave Test
+#   control: hidden
+#   entities:
+#     - binary_sensor.kitchen_pir_3
+#     - switch.kitchen_pir_3
+#     - sensor.kitchen_hum_6
+#     - sensor.kitchen_light_5
+#     - sensor.kitchen_temperature_4
+#     - sensor.kitchen_uv_7
+#     - switch.kitchen_uv_7
 
-hue_motion_test:
-  name: Hue Motion Test Fyr
-  control: hidden
-  entities:
-    - binary_sensor.fyrrum_motion_sensor
-    - light.fyr1
-    - light.fyr2
-    - sensor.fyrrum_temperature
-    - sensor.fyrrum_lightlevel
-    - sensor.fyrrum_lux
-    - sensor.fyrrum_daylight
-    - sensor.fyrrum_dark
+# hue_motion_test:
+#   name: Hue Motion Test Fyr
+#   control: hidden
+#   entities:
+#     - binary_sensor.fyrrum_motion_sensor
+#     - light.fyr1
+#     - light.fyr2
+#     - sensor.fyrrum_temperature
+#     - sensor.fyrrum_lightlevel
+#     - sensor.fyrrum_lux
+#     - sensor.fyrrum_daylight
+#     - sensor.fyrrum_dark
 
-hue_motion_test_hall:
-  name: Hue Motion Test Gang
-  control: hidden
-  entities:
-    - binary_sensor.gang_motion_sensor
-    - light.gang1
-    - light.gang2
-    - sensor.hall_temperature
-    - sensor.hall_lightlevel
-    - sensor.hall_lux
-    - sensor.hall_daylight
-    - sensor.hall_dark
+# hue_motion_test_hall:
+#   name: Hue Motion Test Gang
+#   control: hidden
+#   entities:
+#     - binary_sensor.gang_motion_sensor
+#     - light.gang1
+#     - light.gang2
+#     - sensor.hall_temperature
+#     - sensor.hall_lightlevel
+#     - sensor.hall_lux
+#     - sensor.hall_daylight
+#     - sensor.hall_dark
 
 
-lkpanel_test:
-  name: LK-Panel
-  control: hidden
-  entities: 
-    - switch.lkpanel1
-    - switch.lkpanel2
-    - switch.lkpanel3
-    - switch.lkpanel4
+# lkpanel_test:
+#   name: LK-Panel
+#   control: hidden
+#   entities: 
+#     - switch.lkpanel1
+#     - switch.lkpanel2
+#     - switch.lkpanel3
+#     - switch.lkpanel4

@@ -9,6 +9,8 @@ doorbell_sound_bathroom:
   name: Badeværelse
 doorbell_sound_kitchen:
   name: Køkken
+doorbell_sound_christian:
+  name: Christian
 
 # Kontrol
 doorbell_control_active:

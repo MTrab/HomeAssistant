@@ -25,3 +25,7 @@ sensor.landroid_err_description:
 sensor.landroid_datetime:
   friendly_name: Seneste opdatering
   icon: mdi:update
+script.klipper_start:
+  friendly_name: Start robotklipper
+script.klipper_stop:
+  friendly_name: Stop robotklipper

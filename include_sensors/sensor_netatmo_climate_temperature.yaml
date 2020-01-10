@@ -1,0 +1,20 @@
+- platform: template
+  sensors:
+    netatmo_temperature_kitchen:
+      friendly_name: "Køkken"
+      unit_of_measurement: '°C'
+      value_template: >-
+        {%- if states.climate.netatmo_kokken -%}
+          {{ '%0.2f' % states.climate.netatmo_kokken.attributes.current_temperature | float }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+    netatmo_temperature_livingroom:
+      friendly_name: "Stue"
+      unit_of_measurement: '°C'
+      value_template: >-
+        {%- if states.climate.netatmo_stue -%}
+          {{ '%0.2f' % states.climate.netatmo_stue.attributes.current_temperature | float }}
+        {%- else -%}
+          n/a
+        {%- endif -%}

@@ -1,17 +1,20 @@
 - platform: zoneminder
 
-# - platform: generic
-#   still_image_url: >
-#     http://10.254.254.109:8123{{ states.camera.hallway.attributes.entity_picture }}
-#   name: Test
-#   framerate: 1
+- platform: mjpeg
+  name: Anet A8
+  still_image_url: http://192.168.1.101:8080/?action=snapshot
+  mjpeg_url: http://192.168.1.101:8080/?action=stream
 
-# - platform: local_file
-#   file_path: test/mt.jpg
-#   name: Test
+- platform: generic
+  name: Birdcam
+  still_image_url: http://172.16.254.16/GetData.cgi
+  stream_source: http://172.16.254.16/GetData.cgi?a=.mjpg
+  verify_ssl: false
 
-# - platform: opencv
-#   camera: camera.frontdoor
-#   processor: image_processing.frontdoor_opencv_car
-#   # Optional Parameters
-#   name: OpenCV Camera
+- platform: local_file
+  file_path: /config/www/deepstack/deepstack_latest_person.jpg
+  name: deepstack_latest_person
+
+- platform: local_file
+  file_path: /config/www/deepstack/deepstack_latest_car.jpg
+  name: deepstack_latest_car

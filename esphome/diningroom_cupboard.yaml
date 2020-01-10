@@ -1,0 +1,26 @@
+substitutions:
+  devicename: diningroom_cupboard
+  upper_devicename: Diningroom Cupboard
+  fallback: DC
+  platform: ESP8266
+  board: esp01_1m
+  ip: 10.254.254.253
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+
+output:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+
+light:
+  - platform: binary
+    id: light_set
+    name: ${upper_devicename}
+    output: relay

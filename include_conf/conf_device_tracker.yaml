@@ -1,12 +1,7 @@
-- platform: unifi
-  host: !secret unifi_host
-  username: !secret unifi_user
-  password: !secret unifi_pass
-  verify_ssl: false
-  consider_home: 300
-  interval_seconds: 10
-  track_new_devices: false
-  ssid_filter:
-    - 'Trab.dk'
-    - 'Christian'
-    - 'Michael'
+# - platform: nmap_tracker
+#   home_interval: 10
+#   scan_options: " --privileged -sP "
+#   hosts:
+#     - 192.168.1.236
+#     - 192.168.1.245
+#     - 192.168.1.199

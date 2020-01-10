@@ -1,7 +1,0 @@
-- platform: hue_custom
-  ip_address: !secret hue_bridge_1
-  token: !secret hue_bridge_1_token
-  
-- platform: hue_custom
-  ip_address: !secret hue_bridge_2
-  token: !secret hue_bridge_2_token

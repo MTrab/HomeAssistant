@@ -158,26 +158,9 @@
         {% elif states.sensor.meteobridge_wind_direction.state | float<=326 | float>304 %}NW
         {% elif states.sensor.meteobridge_wind_direction.state | float<=348 | float>326 %}NNW
         {%- endif %}
-
-- platform: influxdb
-  host: a0d7b954-influxdb
-  port: 8086
-  username: !secret influx_user
-  password: !secret influx_pass
-  queries:
-    - name: "Rain 24 hours total" 
-      database: !secret influx_name
-      unit_of_measurement: mm
-      value_template: '{{ value | round(1) }}'
-      field: value
-      group_function: sum
-      measurement: '"mm/h"'
-      where: '"entity_id" = "meteobridge_precip_rate" and time > now() - 24h'
-    - name: "Rain 7 days total" 
-      database: !secret influx_name
-      unit_of_measurement: mm
-      value_template: '{{ value | round(1) }}'
-      field: value
-      group_function: sum
-      measurement: '"mm/h"'
-      where: '"entity_id" = "meteobridge_precip_rate" and time > now() - 7d'
+        
+- platform: mqtt
+  name: "24 timers regn"
+  icon: mdi:weather-rainy
+  unit_of_measurement: mm
+  state_topic: "weather/rain_last_24hours"  

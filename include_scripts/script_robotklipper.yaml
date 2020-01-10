@@ -1,0 +1,7 @@
+klipper_start:
+  sequence:
+    - service: landroid_cloud.start
+
+klipper_stop:
+  sequence:
+    - service: landroid_cloud.home

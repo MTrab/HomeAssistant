@@ -20,16 +20,6 @@
         {%- else -%}
           n/a
         {%- endif -%}
-    battery_heat_kitchen:
-      friendly_name: "Køkken"
-      device_class: battery
-      unit_of_measurement: '%'
-      value_template: >-
-        {%- if states.climate.kitchen_9 -%}
-          {{ states.climate.kitchen_9.attributes.battery_level }}
-        {%- else -%}
-          n/a
-        {%- endif -%}
     battery_heat_bedroom:
       friendly_name: "Soveværelse"
       device_class: battery
@@ -70,16 +60,6 @@
         {%- else -%}
           n/a
         {%- endif -%}
-    battery_heat_livingroom:
-      friendly_name: "Stue"
-      device_class: battery
-      unit_of_measurement: '%'
-      value_template: >-
-        {%- if states.climate.stue_31 -%}
-          {{ states.climate.stue_31.attributes.battery_level }}
-        {%- else -%}
-          n/a
-        {%- endif -%}
     battery_heat_hall:
       friendly_name: "Gang"
       device_class: battery
@@ -97,6 +77,28 @@
       value_template: >-
         {%- if states.climate.trainroom_17 -%}
           {{ states.climate.trainroom_17.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+
+    battery_heat_livingroom:
+      friendly_name: "Stue"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.netatmo_stue -%}
+          {{ states.climate.netatmo_stue.attributes.battery_level }}
+        {%- else -%}
+          n/a
+        {%- endif -%}
+
+    battery_heat_kitchen:
+      friendly_name: "Køkken"
+      device_class: battery
+      unit_of_measurement: '%'
+      value_template: >-
+        {%- if states.climate.netatmo_kokken -%}
+          {{ states.climate.netatmo_kokken.attributes.battery_level }}
         {%- else -%}
           n/a
         {%- endif -%}

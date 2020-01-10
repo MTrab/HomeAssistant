@@ -1,0 +1,20 @@
+radio_control_play:
+  name: Play
+
+radio_control_stop:
+  name: Stop
+
+radio_control_skip_fwd:
+  name: Skip til næste
+
+radio_control_skip_rwd:
+  name: Skip til forrige
+
+radio_control_mute:
+  name: Mute
+
+radio_control_vol_up:
+  name: Vol +
+
+radio_control_vol_down:
+  name: Vol -

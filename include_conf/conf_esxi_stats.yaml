@@ -1,0 +1,4 @@
+host: !secret esxi_host
+username: !secret esxi_user
+password: !secret esxi_pass
+verify_ssl: false

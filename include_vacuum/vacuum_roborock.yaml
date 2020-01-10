@@ -1,0 +1,4 @@
+- platform: xiaomi_miio
+  name: Robert
+  host: !secret roborock_host
+  token: !secret roborock_token

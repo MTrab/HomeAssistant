@@ -1,0 +1,190 @@
+title: Robotterne
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [10, 10]
+columns: 9
+global_parameters:
+  use_comma: 0
+  precision: 1
+  use_hass_icon: 0
+  namespace: default
+
+# LABELS
+label_selectvacuum:
+  widget_type: label
+  title2: Rengør område
+  widget_style: "background: orange;"
+  title2_style: "color: black; font-size: 35px; top: 40px"
+
+label_controls:
+  widget_type: label
+  title2: Kontrol
+  widget_style: "background: orange;"
+  title2_style: "color: black; font-size: 35px; top: 40px"
+
+label_states:
+  widget_type: label
+  title2: Status
+  widget_style: "background: orange;"
+  title2_style: "color: black; font-size: 35px; top: 40px"
+
+
+# STØVSUGNING
+select_vacuum_diningroom:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.clean_diningroom
+  title: Støvsug Spisestue
+
+select_vacuum_kitchen:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.clean_kitchen
+  title: Støvsug Køkken
+
+select_vacuum_livingroom:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.clean_livingroom
+  title: Støvsug Stue
+
+# GULVMOPPE
+select_mop_diningroom:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.mop_diningroom
+  title: Moppe Spisestue
+
+select_mop_kitchen:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.mop_kitchen
+  title: Moppe Køkken
+
+select_mop_dining_kitchen:
+  widget_type: script
+  icon_on: mdi-broom
+  icon_off: mdi-broom
+  entity: script.mop_diningroom_kitchen
+  title: Moppe Spisestue og køkken
+
+# KONTROL
+control_xiaomi_start:
+  widget_type: script
+  icon_on: mdi-play
+  icon_off: mdi-play
+  entity: script.robert_start
+  title: Start Robert
+
+control_xiaomi_dock:
+  widget_type: script
+  icon_on: mdi-home
+  icon_off: mdi-home
+  entity: script.robert_dock
+  title: Send Robert i dock
+
+control_landroid_start:
+  widget_type: script
+  icon_on: mdi-play
+  icon_off: mdi-play
+  entity: script.klipper_start
+  title: Start klipper
+
+control_landroid_dock:
+  widget_type: script
+  icon_on: mdi-home
+  icon_off: mdi-home
+  entity: script.klipper_stop
+  title: Send klipper i dock
+
+# STATUS
+state_landroid:
+  widget_type: icon
+  entity: sensor.landroid_status
+  title: Robotklipper
+  state_text: 1
+  #widget_style: "background-color: #494900;"
+  icons:
+    "Slår græs":
+      icon: mdi-play
+      style: "color: green"
+    "Klipper kant":
+      icon: mdi-play
+      style: "color: green"
+    "Kører hjem":
+      icon: mdi-home
+      style: "color: green"
+    "Hjemme":
+      icon: mdi-stop
+      style: "color: grey"
+    "Hjemme (Lader)":
+      icon: mdi-battery-charging
+      style: "color: yellow"
+    "Hjemme (Regnvejr)":
+      icon: mdi-alert-decagram
+      style: "color: red"
+    "Manuel Stop":
+      icon: mdi-alert-outline
+      style: "color: red"
+    "Ukendt":
+      icon: mdi-help
+      style: "color: grey"
+    "default":
+      icon: mdi-alert
+      style: "color: red"
+
+state_xiaomi_status:
+  widget_type: icon
+  entity: sensor.robert_status
+  title: Robert
+  state_text: 1
+  #widget_style: "background-color: #494900;"
+  icons:
+    "Charging":
+      icon: mdi-battery-charging
+      style: "color: yellow"
+    "Zoned cleaning":
+      icon: mdi-play
+      style: "color: green"
+    "Returning home":
+      icon: mdi-home
+      style: "color: green"
+    "default":
+      icon: mdi-alert
+      style: "color: red"
+
+state_xiaomi_brushes:
+  widget_type: sensor
+  entity: vacuum.robert.main_brush_left
+  sub_entity: vacuum.robert.side_brush_left
+  title: Børste
+  precision: 0
+  value_style: "margin-top: -40px; color: orange"
+  title2: Side børste
+  title2_style: "margin-top: 40px"
+  state_text_style: "font-size: 250%; color: orange"
+
+state_xiaomi_filter_sensor:
+  widget_type: sensor
+  entity: vacuum.robert.filter_left
+  sub_entity: vacuum.robert.sensor_dirty_left
+  title: Filter
+  precision: 0
+  value_style: "margin-top: -40px; color: orange"
+  title2: Sensor
+  title2_style: "margin-top: 40px"
+  state_text_style: "font-size: 250%; color: orange"
+
+
+layout:
+  - include: header
+  - label_selectvacuum(3x1), label_controls(3x1), label_states(3x1)
+  - select_vacuum_diningroom, select_vacuum_kitchen, select_vacuum_livingroom, control_xiaomi_start, control_landroid_start, spacer, state_xiaomi_status, state_landroid
+  - select_mop_diningroom, select_mop_kitchen, select_mop_dining_kitchen, control_xiaomi_dock, control_landroid_dock, spacer, state_xiaomi_brushes
+  - spacer(6x1), state_xiaomi_filter_sensor
+  - include: footer

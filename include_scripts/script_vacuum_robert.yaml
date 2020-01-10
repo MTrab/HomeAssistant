@@ -1,0 +1,98 @@
+clean_diningroom:
+  sequence:
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[22285,24012,26085,29762]]
+
+clean_kitchen:
+  sequence:
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[26101,27451,30901,28951], [29213,25932,30413,27682]]
+
+clean_livingroom:
+  sequence:
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        params: [[29202,23411,35352,25961], [30994,25687,35444,29237]]
+
+clean_diningroom_kitchen:
+  sequence:
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[22285,24012,26085,29762], [26101,27451,30901,28951], [29213,25932,30413,27682]]
+
+mop_kitchen:
+  sequence:
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: 105
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[26101,27451,30901,28951], [29213,25932,30413,27682], [29110,23455,30810,26005]]
+    - delay:
+        seconds: 30
+    - wait_template: "{{ states.vacuum.robert.attributes.status == 'Charging'}}"
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: Balanced
+
+mop_diningroom_kitchen:
+  sequence:
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: 105
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[22285,24012,26085,29762], [26101,27451,30901,28951], [29213,25932,30413,27682], [29110,23455,30810,26005]]
+    - delay:
+        seconds: 30
+    - wait_template: "{{ states.vacuum.robert.attributes.status == 'Charging'}}"
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: Balanced
+
+mop_diningroom:
+  sequence:
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: 105
+    - service: vacuum.xiaomi_clean_zone
+      data:
+        entity_id: vacuum.robert
+        repeats: 1
+        zone: [[22285,24012,26085,29762]]
+    - delay:
+        seconds: 30
+    - wait_template: "{{ states.vacuum.robert.attributes.status == 'Charging'}}"
+    - service: vacuum.set_fan_speed
+      data:
+        entity_id: vacuum.robert
+        fan_speed: Balanced
+
+robert_start:
+  sequence:
+    - service: vacuum.start
+      entity_id: vacuum.robert
+
+robert_dock:
+  sequence:
+    - service: vacuum.return_to_base
+      entity_id: vacuum.robert

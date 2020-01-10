@@ -1,0 +1,11 @@
+# - platform: mqtt
+#   name: Klip græs
+#   state_topic: "landroid/status/active"
+#   command_topic: "landroid/set/mow"
+#   payload_on: "start"
+#   payload_off: "stop"
+#   state_on: "true"
+#   state_off: "false"
+#   optimistic: false
+#   qos: 0
+#   retain: false

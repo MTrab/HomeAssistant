@@ -22,6 +22,7 @@ include:
     - input_boolean.doorbell_sound_bedroom
     - input_boolean.doorbell_sound_bathroom
     - input_boolean.doorbell_sound_kitchen
+    - input_boolean.doorbell_sound_christian
     - input_boolean.doorbell_control_active
     - input_number.heat_control_lowerby
     - input_number.heat_control_min_temp
@@ -51,3 +52,49 @@ include:
     - input_number.heat_save_trains
     - switch.switch01_27
     - switch.switch02_28
+    - climate.netatmo_kokken
+    - climate.netatmo_stue
+    - sensor.transmission_up_speed
+    - sensor.transmission_down_speed
+    - sensor.christian_led_strip_wifi_signal
+    - sensor.motion_gang_temperature
+    - sensor.motion_bryggers_temperature
+    - sensor.kitchen_hum_6
+    - sensor.kitchen_wifi_signal
+    - sensor.netatmo_temperature_kitchen
+    - sensor.netatmo_temperature_livingroom
+    - sensor.landroid_wifi_quality
+    - sensor.mbw_dewpoint
+    - sensor.mbw_humidity
+    - sensor.mbw_indoor_hum
+    - sensor.mbw_indoor_temp
+    - sensor.mbw_pressure
+    - sensor.mbw_rain_today
+    - sensor.mbw_temperature
+    - sensor.repos_temperature_43
+    - sensor.unifi_gateway_wan_rx
+    - sensor.unifi_gateway_wan_tx
+    - sensor.kamstrup_ampere_p1
+    - sensor.kamstrup_ampere_p2
+    - sensor.kamstrup_ampere_p3
+    - sensor.kamstrup_counter
+    - sensor.kamstrup_total_watt
+    - sensor.kamstrup_voltage_p1
+    - sensor.kamstrup_voltage_p2
+    - sensor.kamstrup_voltage_p3
+    - sensor.kamstrup_watt_p1
+    - sensor.kamstrup_watt_p2
+    - sensor.kamstrup_watt_p3
+    - sensor.panasonic_aquarea_pumpflow
+    - sensor.panasonic_aquarea_inlet_temperature
+    - sensor.panasonic_aquarea_outlet_temperature
+    - sensor.panasonic_aquarea_compressor_frequency
+    - sensor.panasonic_aquarea_actual_tank_temperature
+    - sensor.panasonic_aquarea_outdoor_ambient
+    - sensor.panasonic_aquarea_w_production
+    - sensor.panasonic_aquarea_w_consumption
+    - sensor.panasonic_aquarea_outlet_target_temperature
+    - sensor.panasonic_aquarea_defrost_state
+    - sensor.panasonic_aquarea_cop
+    - sensor.panasonic_aquarea_outdoor_pipe_temperature
+    - sensor.panasonic_aquarea_indoor_pipe_temperature

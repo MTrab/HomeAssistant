@@ -1,0 +1,40 @@
+substitutions:
+  devicename: bathroom
+  upper_devicename: Bathroom
+  fallback: Bathroom
+  platform: ESP8266
+  board: esp01_1m
+  ip: 10.254.254.114
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+
+  - platform: gpio
+    id: button
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: true
+    on_press:
+      - light.toggle: light_set
+
+output:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: false
+
+light:
+  - platform: binary
+    id: light_set
+    name: ${upper_devicename}
+    output: relay

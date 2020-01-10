@@ -1,0 +1,95 @@
+platform: bwalarm
+code: '1234'
+passcode_attempts: 3
+passcode_attempts_timeout: 30
+admin_password: Horsensvej50
+panel:
+  cameras: []
+  enable_clock: true
+  panel_title: Alarm
+  enable_sensors_panel: 'True'
+  round_buttons: 'True'
+  shadow_effect: 'True'
+  hide_passcode: 'True'
+  camera_update_interval: ''
+  hide_sidebar: true
+  hide_sensors: true
+  enable_serif_font: false
+enable_night_mode: false
+states:
+  armed_away:
+    immediate:
+    - binary_sensor.kitchen_pir_3
+    - binary_sensor.lille_vindue_57
+    delayed:
+    - binary_sensor.gang_motion_sensor
+    - binary_sensor.frontdoor_59
+    override:
+    - binary_sensor.frontdoor_59
+    - binary_sensor.gang_motion_sensor
+    pending_time: 15
+    warning_time: 30
+    trigger_time: 600
+  armed_home:
+    immediate: []
+    delayed: []
+    override: []
+    pending_time: 0
+    warning_time: 0
+    trigger_time: 600
+  armed_night:
+    immediate: []
+    delayed: []
+    override: []
+    pending_time: 0
+    warning_time: 0
+    trigger_time: 600
+users:
+- id: 80c802ca69e947229bc0b44f90732744
+  name: morten trab
+  enabled: true
+  code: '180281'
+  picture: ''
+- id: c545c02534924194af3fc1e8c7de126e
+  name: Britta Trab
+  enabled: true
+  code: c545c02534924194af3fc1e8c7de126e
+  picture: ha.png
+- id: ee8d497c1adb467a9c620b593c117bf7
+  name: Christian Trab
+  enabled: true
+  code: ee8d497c1adb467a9c620b593c117bf7
+  picture: ha.png
+- id: fde4a7ca58304ca2982ef1432806f155
+  name: Michael Trab
+  enabled: true
+  code: fde4a7ca58304ca2982ef1432806f155
+  picture: ha.png
+- id: 2e1f0aae655e4be8aff7812cb03a866a
+  name: Hass.io
+  enabled: false
+  code: 2e1f0aae655e4be8aff7812cb03a866a
+  picture: ha.png
+- id: d96786a9d510403fb6b76698bcba10f3
+  name: Dashboard
+  enabled: false
+  code: d96786a9d510403fb6b76698bcba10f3
+  picture: ha.png
+- id: bd5c5a8517f043c29a8f3fee231d6466
+  name: Home Assistant Cast
+  enabled: false
+  code: bd5c5a8517f043c29a8f3fee231d6466
+  picture: ha.png
+- id: e7abee56ad314374a2a5be645a334ad7
+  name: Home Assistant Cloud
+  enabled: false
+  code: e7abee56ad314374a2a5be645a334ad7
+  picture: ha.png
+- id: 5aa691d6443b4334a55db09d9953d968
+  name: remote - morten trab
+  enabled: true
+  code: remoteHorsensvej50Morten
+  picture: ha.png
+enable_persistence: true
+log_size: '50'
+ignore_open_sensors: false

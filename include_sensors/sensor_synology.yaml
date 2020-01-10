@@ -1,0 +1,18 @@
+- platform: synologydsm
+  host: !secret syno_ip
+  username: !secret syno_user
+  password: !secret syno_pass
+  monitored_conditions:
+    - cpu_total_load
+    - memory_real_usage
+    - network_up
+    - network_down
+    - disk_smart_status
+    - disk_status
+    - disk_exceed_bad_sector_thr
+    - disk_below_remain_life_thr
+    - disk_temp
+    - volume_status
+    - volume_size_total
+    - volume_size_used
+    - volume_percentage_used

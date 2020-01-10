@@ -1,0 +1,4 @@
+- name: kamstrup
+  type: tcp
+  host: 10.254.254.216
+  port: 502

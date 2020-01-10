@@ -1,0 +1,266 @@
+climate.spisestue_11:
+  friendly_name: Spisestue
+  min_temp: 4
+climate.toilet_13:
+  friendly_name: Badeværelse
+  min_temp: 4
+climate.netatmo_kokken:
+  friendly_name: Køkken
+  min_temp: 7
+climate.bedroom_14:
+  friendly_name: Soveværelse
+  min_temp: 4
+climate.repos_15:
+  friendly_name: Repos
+  min_temp: 4
+climate.michael_18:
+  friendly_name: Michael
+  min_temp: 4
+climate.christian_16:
+  friendly_name: Christian
+  min_temp: 4
+climate.netatmo_stue:
+  friendly_name: Stue
+  min_temp: 7
+climate.hall_12:
+  friendly_name: Gang
+  min_temp: 4
+climate.trainroom_17:
+  friendly_name: Togrum
+  min_temp: 4
+cover.stue_vindue:
+  icon: mdi:blinds
+  friendly_name: Vindue
+cover.glasparti:
+  icon: mdi:blinds
+  friendly_name: Glasparti
+cover.terrasse_gardin:
+  icon: mdi:blinds
+  friendly_name: Terrassedør
+cover.spisestue_gardin:
+  icon: mdi:blinds
+  friendly_name: Vindue
+input_boolean.weather:
+  custom_ui_state_card: custom-weather-card
+  config:
+    weather: weather.yweather
+input_boolean.doorbell_control_active:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:bell''; return ''mdi:bell-off'';
+
+      '
+input_boolean.doorbell_control_test:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:bell-ring''; return ''mdi:bell'';
+
+      '
+input_boolean.doorbell_sound_diningroom:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:speaker-wireless''; return ''mdi:speaker-off'';
+
+      '
+input_boolean.doorbell_sound_livingroom:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:speaker-wireless''; return ''mdi:speaker-off'';
+
+      '
+input_boolean.doorbell_sound_bedroom:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:speaker-wireless''; return ''mdi:speaker-off'';
+
+      '
+input_boolean.doorbell_sound_bathroom:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:speaker-wireless''; return ''mdi:speaker-off'';
+
+      '
+input_boolean.doorbell_sound_kitchen:
+  templates:
+    icon: 'if (state === ''on'') return ''mdi:speaker-wireless''; return ''mdi:speaker-off'';
+
+      '
+switch.doorbell_5_1:
+  friendly_name: Dørklokke
+sensor.kamstrup_reader_7_1:
+  friendly_name: Målerstand
+  unit_of_measurement: kWh
+sensor.kamstrup_reader_7_3:
+  friendly_name: Effekt Total
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_4:
+  friendly_name: Effekt Fase 1
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_5:
+  friendly_name: Effekt Fase 2
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_6:
+  friendly_name: Effekt Fase 3
+  unit_of_measurement: kW
+sensor.kamstrup_reader_7_7:
+  friendly_name: Spænding Fase 1
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_8:
+  friendly_name: Spænding Fase 2
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_9:
+  friendly_name: Spænding Fase 3
+  unit_of_measurement: V
+sensor.kamstrup_reader_7_10:
+  friendly_name: Strøm Fase 1
+  unit_of_measurement: A
+sensor.kamstrup_reader_7_11:
+  friendly_name: Strøm Fase 2
+  unit_of_measurement: A
+sensor.kamstrup_reader_7_12:
+  friendly_name: Strøm Fase 3
+  unit_of_measurement: A
+sensor.landroid_battery:
+  friendly_name: Batteri
+  icon: mdi:battery
+sensor.landroid_battery_charging:
+  friendly_name: Lader
+  templates:
+    icon: if (state === 'false') return 'mdi:battery'; return 'mdi:battery-charging-100';
+sensor.landroid_wifi_quality:
+  friendly_name: Wifi
+  icon: mdi:wifi
+sensor.landroid_total_time:
+  friendly_name: Timer
+  icon: mdi:timer
+sensor.landroid_total_distance:
+  friendly_name: Distance
+  icon: mdi:map-marker-distance
+sensor.landroid_status_description:
+  friendly_name: Status
+  icon: mdi:all-inclusive
+sensor.landroid_err_description:
+  friendly_name: Fejl
+  icon: mdi:alert
+sensor.landroid_datetime:
+  friendly_name: Seneste opdatering
+  icon: mdi:update
+script.klipper_start:
+  friendly_name: Start robotklipper
+script.klipper_stop:
+  friendly_name: Stop robotklipper
+light.couch:
+  friendly_name: Sofa Hjørne
+light.sofabord:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+light.spisebord:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+light.kitchen:
+  friendly_name: Loft
+light.livingroom_group:
+  friendly_name: Sofa - Lysgruppe
+light.bedroom_group:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+  friendly_name: Loft
+light.fyrrum:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+  friendly_name: Loft
+light.gang:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+  friendly_name: Loft
+light.diningroom_cupboard:
+  friendly_name: Skab
+light.christian_led_strip:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+light.christian_loft:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider-toggle
+binary_sensor.rms_2_1:
+  friendly_name: Bevægelse Trappe
+sensor.rms_2_2:
+  friendly_name: Trappe
+sensor.rms_2_3:
+  friendly_name: Trappe
+script.clean_diningroom:
+  friendly_name: Rengør spisestue
+script.clean_kitchen:
+  friendly_name: Rengør køkken
+script.clean_livingroom:
+  friendly_name: Rengør stue
+sensor.kitchen_temperature_4:
+  friendly_name: Køkken
+sensor.trappe_temperature_23:
+  friendly_name: Trappe Opgang
+person.morten: {}
+sensor.meteobridge_barometric_pressure:
+  friendly_name: Lufttryk
+sensor.meteobridge_out_humidity:
+  friendly_name: Luft fugtighed
+sensor.meteobridge_out_temp:
+  friendly_name: Temperatur
+light.livingroom_corner:
+  friendly_name: Stue Hjørne
+sensor.fyrrum_sensor_temperature:
+  friendly_name: Bryggers
+sensor.gang_sensor_temperature:
+  friendly_name: Gang
+light.bathroom:
+  friendly_name: Væg
+sensor.anet_a8_3d_printer_current_job:
+  friendly_name: Aktuelt job status
+sensor.anet_a8_3d_printer_extruder_0:
+  friendly_name: Extruder
+sensor.anet_a8_3d_printer_bed_0:
+  friendly_name: Bord
+sensor.anet_a8_3d_printer_job_end:
+  friendly_name: Job slut
+sensor.anet_a8_3d_printer_job_start:
+  friendly_name: Job start
+sensor.anet_a8_feed_rate:
+  friendly_name: Feed
+sensor.anet_a8_flow_rate:
+  friendly_name: Flow
+sensor.anet_a8_jobname:
+  friendly_name: Job navn
+sensor.anet_a8_layer:
+  friendly_name: Layer
+sensor.wind_dir_string:
+  friendly_name: Vind retning
+sensor.meteobridge_wind_speed:
+  friendly_name: Vind hastighed
+sensor.kamstrup_ampere_p1:
+  friendly_name: Ampere Fase 1
+  icon: mdi:flash-circle
+sensor.kamstrup_ampere_p2:
+  friendly_name: Ampere Fase 2
+  icon: mdi:flash-circle
+sensor.kamstrup_ampere_p3:
+  friendly_name: Ampere Fase 3
+  icon: mdi:flash-circle
+sensor.kamstrup_counter:
+  friendly_name: Målerstand
+  icon: mdi:gauge
+sensor.kamstrup_total_watt:
+  friendly_name: Aktuel Watt Forbrug
+sensor.kamstrup_voltage_p1:
+  friendly_name: Spænding Fase 1
+sensor.kamstrup_voltage_p2:
+  friendly_name: Spænding Fase 2
+sensor.kamstrup_voltage_p3:
+  friendly_name: Spænding Fase 3
+sensor.weeknumber:
+  friendly_name: Uge
+sensor.restaffald:
+  icon: mdi:trash-can
+sensor.pap:
+  icon: mdi:trash-can
+cover.glasparti_midt:
+  icon: mdi:blinds
+cover.glasparti_venstre:
+  icon: mdi:blinds
+cover.glasdor:
+  icon: mdi:blinds
+cover.kokken_vindue:
+  icon: mdi:blinds
+cover.sovevaerelse_vindue:
+  icon: mdi:blinds

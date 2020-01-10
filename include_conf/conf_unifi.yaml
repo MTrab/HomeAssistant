@@ -1,0 +1,8 @@
+controllers:
+  - host: 192.168.1.66
+    site: Default
+    dont_track_wired_clients: 'true'
+    ssid_filter:
+      - 'Trab.dk'
+      - 'Christian'
+      - 'Michael'

@@ -1,2 +1,25 @@
 # - platform: philips_js
 #   host: 192.168.1.105
+
+#- platform: androidtv
+#  host: 192.168.1.105
+#  name: "Philips TV"
+#  device_class: androidtv
+#  adb_server_ip: 127.0.0.1
+#  adb_server_port: 5037
+  
+# - platform: philips_android_tv
+#   name: TV
+#   host: 192.168.1.105
+#   mac: 1c:5a:6b:d1:f0:68
+#   username: 4ZByGPSHp2mpprH9
+#   password: 7527308d85d88b416d48f80904a9fdd26ae39b9e1e984122c510a9b9950a73b7
+
+- platform: philips_android_tv
+  name: TV
+  #host: 192.168.1.105
+  host: 192.168.1.244
+  mac: 3c:95:09:98:4f:bb
+  #mac: 1c:5a:6b:d1:f0:68
+  username: 4ZByGPSHp2mpprH9
+  password: 7527308d85d88b416d48f80904a9fdd26ae39b9e1e984122c510a9b9950a73b7

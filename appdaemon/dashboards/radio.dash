@@ -1,0 +1,76 @@
+##
+## Main arguments, all optional
+##
+title: Radio Kontrol
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [10, 10]
+columns: 9
+global_parameters:
+  use_comma: 0
+  precision: 1
+  use_hass_icon: 1
+  namespace: default
+
+
+select_player:
+  widget_type: input_select
+  entity: input_select.radio_device
+  title: Vælg afspiller
+
+select_channel:
+  widget_type: input_select
+  entity: input_select.radio_channel
+  title: Vælg kanal
+
+
+control_play:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_play
+  icon_on: mdi-play
+  icon_off: mdi-play
+
+control_stop:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_stop
+  icon_on: mdi-stop
+  icon_off: mdi-stop
+
+control_vol_up:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_vol_up
+  icon_on: mdi-volume-plus
+  icon_off: mdi-volume-plus
+
+control_vol_mute:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_mute
+  icon_on: mdi-volume-mute
+  icon_off: mdi-volume-mute
+
+control_vol_down:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_vol_down
+  icon_on: mdi-volume-minus
+  icon_off: mdi-volume-minus
+
+control_skip_fwd:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_skip_fwd
+  icon_on: mdi-skip-next
+  icon_off: mdi-skip-next
+
+control_skip_rwd:
+  widget_type: input_boolean
+  entity: input_boolean.radio_control_skip_rwd
+  icon_on: mdi-skip-previous
+  icon_off: mdi-skip-previous
+
+
+layout:
+  - include: header
+  - spacer, select_player(2x1), control_play(2x1), control_stop(2x1), control_vol_up
+  - spacer, select_channel(2x1), control_skip_rwd(2x1), control_skip_fwd(2x1), control_vol_mute
+  - spacer(7x1), control_vol_down
+  -
+  - include: footer

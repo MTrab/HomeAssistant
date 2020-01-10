@@ -10,10 +10,12 @@ global_parameters:
   namespace: default
 
 thermostat_christian:
-  widget_type: input_slider
-  entity: input_number.heat_set_christian
+  widget_type: climate
+  entity: climate.christian_16
   title: Radiator
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 light_ledstrip:
   widget_type: light

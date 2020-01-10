@@ -59,6 +59,32 @@ load_weather_panel:
     return: /MainPanel
   widget_style: "background-color: #072300;"
 
+load_robots_panel:
+  widget_type: navigate
+  title: Robotter
+  icon_active: mdi-robot-vacuum
+  icon_inactive: mdi-robot-vacuum
+  icon_active_style: "color: orange;"
+  url: /robots
+  args:
+    timeout: 20
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
+load_radio:
+  widget_type: navigate
+  title: Radio
+  icon_active: mdi-radio
+  icon_inactive: mdi-radio
+  icon_active_style: "color: orange;"
+  url: /radio
+  args:
+    timeout: 20
+    sticky: 1
+    return: /MainPanel
+  widget_style: "background-color: #072300;"
+
 reload:
   widget_type: reload
   title: Opdater
@@ -66,4 +92,4 @@ reload:
   icon_active_style: "color: orange;"
 
 layout:
-  - spacer(2x1), load_main_panel, load_1stfloor_panel, spacer, reload, load_settings_panel
+  - spacer(2x1), load_main_panel, load_1stfloor_panel, load_robots_panel, reload, load_radio, load_settings_panel

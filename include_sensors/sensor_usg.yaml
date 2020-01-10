@@ -1,0 +1,17 @@
+- platform: unifigateway
+  host: !secret unifi_host
+  username: !secret unifi_user
+  password: !secret unifi_pass
+
+- platform: template
+  sensors:
+    unifi_gateway_wan_rx:
+      friendly_name: UniFi Gateway WAN RX
+      unit_of_measurement: 'MB/s'
+      value_template: >-
+        {{ (states.sensor.unifi_gateway_wan.attributes["rx_bytes-r"] / 1000000) | round(2) | float }}
+    unifi_gateway_wan_tx:
+      friendly_name: UniFi Gateway WAN TX
+      unit_of_measurement: 'MB/s'
+      value_template: >-
+        {{ (states.sensor.unifi_gateway_wan.attributes["tx_bytes-r"] / 1000000) | round(2) | float }}

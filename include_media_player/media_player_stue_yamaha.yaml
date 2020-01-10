@@ -1,0 +1,6 @@
+- platform: yamaha
+  name: yamaha receiver
+  host: 192.168.1.212
+  source_names:
+    AV1: "ChromeCast"
+    AV4: "TV"

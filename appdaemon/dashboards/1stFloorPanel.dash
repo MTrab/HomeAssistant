@@ -14,6 +14,11 @@ light_stairs:
   entity: light.trappe
   title: Trappe
 
+light_repos:
+  widget_type: light
+  entity: light.repos
+  title: Repos
+
 light_christian_ledstrip:
   widget_type: light
   entity: light.christian_led_strip
@@ -23,28 +28,34 @@ light_christian_loft:
   widget_type: light
   entity: light.christian_loft
   title: Christian Loft
-  
+
 thermostat_christian:
-  widget_type: input_slider
-  entity: input_number.heat_set_christian
+  widget_type: climate
+  entity: climate.christian_16
   title: Christian
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_trains:
-  widget_type: input_slider
-  entity: input_number.heat_set_trains
+  widget_type: climate
+  entity: climate.trainroom_17
   title: Tog rum
   units: °C
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
 
 thermostat_repos:
-  widget_type: input_slider
-  entity: input_number.heat_set_repos
+  widget_type: climate
+  entity: climate.repos_15
   title: Repos
   units: °C
-  
+  level_style: "color: Orange"
+  level2_style: "color: Orange"
+
 layout:
   - include: header
-  - spacer(3x1), light_stairs, light_christian_ledstrip, light_christian_loft
+  - spacer(2x1), light_repos, light_stairs, light_christian_ledstrip, light_christian_loft
   - spacer(3x1), thermostat_repos, thermostat_christian, thermostat_trains
   -
   -

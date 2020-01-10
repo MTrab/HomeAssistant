@@ -1,0 +1,63 @@
+substitutions:
+  devicename: lk4
+  upper_devicename: LK4 Button
+  fallback: lk-4
+  platform: ESP32
+  board: esp32doit-devkit-v1
+  ip: 10.254.254.2
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+deep_sleep:
+  id: deep_sleep_1
+  sleep_duration: 300min
+  esp32_ext1_wakeup:
+    mode: ANY_HIGH
+    pins:
+      - 2
+      - 4
+      - 12
+      - 13
+      
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+  - platform: gpio
+    pin:
+      number: 2
+      mode: INPUT_PULLDOWN
+      inverted: True
+    name: "Button 1"
+  - platform: gpio
+    pin:
+      number: 4
+      mode: INPUT_PULLDOWN
+      inverted: True
+    name: "Button 2"
+  - platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLDOWN
+      inverted: True
+    name: "Button 3"
+  - platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLDOWN
+      inverted: True
+    name: "Button 4"
+    
+sensor:
+sensor:
+  - platform: wifi_signal
+    name: "$upper_devicename WiFi Signal"
+    update_interval: 10s
+  - platform: uptime
+    name: "$upper_devicename Uptime"
+  - platform: adc
+    pin: 34
+    attenuation: 11db
+    filters:
+    name: "$upper_devicename Battery"

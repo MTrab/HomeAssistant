@@ -1,0 +1,24 @@
+{
+  "nodes": {
+    "b969637_93e3ea": {
+      "lastPayload": {
+        "state": 1,
+        "attributes": {}
+      }
+    },
+    "cccff5c4_6d0668": {
+      "lastPayload": {
+        "state": "2",
+        "attributes": {
+          "friendly_name": "Uge"
+        }
+      }
+    },
+    "9c03fb_ca483c08": {
+      "lastPayload": {
+        "state": 2,
+        "attributes": {}
+      }
+    }
+  }
+}

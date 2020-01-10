@@ -1,0 +1,18 @@
+radio_device:
+  name: Afspiller
+  options:
+    - Stue
+    - Køkken
+    - Spisestue
+    - Badeværelse
+    - Soveværelse
+
+radio_channel:
+  name: Kanal
+  options:
+    - DR P3
+    - DR P4
+    - VLR
+    - Alfa
+    - Radio ABC
+    - Discover Weekly Playlist

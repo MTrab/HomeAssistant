@@ -1,12 +1,12 @@
 cover.stue_vindue:
-  icon: mdi:blinds
   friendly_name: Vindue
+  device_class: blind
 cover.glasparti:
-  icon: mdi:blinds
   friendly_name: Glasparti
+  device_class: blind
 cover.terrasse_gardin:
-  icon: mdi:blinds
   friendly_name: Terrassedør
+  device_class: blind
 cover.spisestue_gardin:
-  icon: mdi:blinds
   friendly_name: Vindue
+  device_class: blind

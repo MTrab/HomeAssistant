@@ -1,21 +1,22 @@
 homeassistant:
-  name: Home
+  name: Horsensvej
   latitude: !secret loc_latitude
   longitude: !secret loc_longitude
   elevation: 62
   unit_system: metric
   time_zone: Europe/Copenhagen
-  customize: !include_dir_merge_named include_customize/
+  customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
+  packages: !include_dir_named packages
+  whitelist_external_dirs:
+    - /tmp
+    - /config/www/deepstack
 
 frontend:
-  themes: !include_dir_merge_named include_themes/
   extra_html_url:
     - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
-    - /local/custom-ui/custom-weather-card.html
-  extra_html_url_es5:
-    - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui-es5.html
-    - /local/custom-ui/custom-weather-card.html
+  themes: !include_dir_merge_named themes
+  #themes: !include_dir_merge_named include_themes/
 
 config:
 
@@ -36,11 +37,19 @@ sun:
 
 person:
 
+wake_on_lan:
+
 system_health:
 
+mobile_app:
+
+# Include
+#########
+alarm_control_panel: !include resources/bwalarm/bwalarm.yaml
 vera: !include include_conf/conf_vera.yaml
 hue: !include include_conf/conf_hue.yaml
 mysensors: !include include_conf/conf_mysensors.yaml
+panel_custom: !include include_conf/conf_panel_custom.yaml
 panel_iframe: !include include_conf/conf_panel_iframe.yaml
 notify: !include include_conf/conf_notify.yaml
 influxdb: !include include_conf/conf_influxdb.yaml
@@ -51,21 +60,53 @@ cloud: !include include_conf/conf_cloud.yaml
 zoneminder: !include include_conf/conf_zoneminder.yaml
 camera: !include include_conf/conf_camera.yaml
 image_processing: !include include_conf/conf_imageprocessing.yaml
-googlehome: !include include_conf/conf_google_home.yaml
+netatmo: !include include_conf/conf_netatmo.yaml
+twilio: !include include_conf/conf_twilio.yaml
+repetier: !include include_conf/conf_repetier.yaml
+modbus: !include include_conf/conf_modbus.yaml
+unifi: !include include_conf/conf_unifi.yaml
+proximity: !include include_conf/conf_proximity.yaml
+scene: !include scenes.yaml
 
-
-group: !include_dir_merge_named include_groups/
+# Include_list
+##############
 automation: !include_dir_merge_list include_automations/
-script: !include_dir_merge_named include_scripts/
 light: !include_dir_merge_list include_lights/
-input_boolean: !include_dir_merge_named include_booleans/
-input_number: !include_dir_merge_named include_numbers/
-input_datetime: !include_dir_merge_named include_datetime/
 sensor: !include_dir_merge_list include_sensors/
 zone: !include_dir_merge_list include_zones/
 binary_sensor: !include_dir_merge_list include_binary/
 cover: !include_dir_merge_list include_cover/
 switch: !include_dir_merge_list include_switch/
 media_player: !include_dir_merge_list include_media_player/
-#input_text: !include_dir_merge_named include_text/
-#calendar: !include_dir_merge_list include_calendar/
+vacuum: !include_dir_merge_list include_vacuum/
+
+# Include_named
+###############
+input_select: !include_dir_merge_named include_input_select/
+group: !include_dir_merge_named include_groups/
+script: !include_dir_merge_named include_scripts/
+input_boolean: !include_dir_merge_named include_booleans/
+input_number: !include_dir_merge_named include_numbers/
+# input_datetime: !include_dir_merge_named include_datetime/
+
+#landroid_cloud:
+#  email: !secret landroid_email
+#  password: !secret landroid_pass
+
+mbweather:
+  host: 10.254.254.112
+  username: meteobridge
+  password: chilagahek
+  use_ssl: false
+
+#logger:
+#  default: warning
+#  logs:
+#    # log level for HA core
+#    homeassistant.core: warning
+#    homeassistant.components.cloud.google_config: debug
+
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: "0xD3, 0x55, 0x8C, 0xB0, 0xC2, 0xEF, 0xE9, 0x76, 0xBC, 0xB3, 0xDB, 0x0E, 0x09, 0x1D, 0x55, 0x8B"

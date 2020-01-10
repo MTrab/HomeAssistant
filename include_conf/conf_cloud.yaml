@@ -1,30 +1,40 @@
 google_actions:
   filter:
+    include_domains:
+      - scene
     include_entities:
       - light.gang
-      - light.fyrrum
+      - light.bryggers
       - light.kitchen
       - light.spisebord
       - light.bedroom_group
-      - light.couch
+      - light.livingroom_corner
       - light.christian_loft
       - light.christian_led_strip
       - light.gardsplads
+      - light.bathroom
+      - light.carport
+      - light.repos
+      - light.trappe
       - cover.terrasse_gardin
       - cover.spisestue_gardin
       - cover.glasparti
       - cover.stue_vindue
-      - switch.livingroom_tv
+      - cover.kokken_vindue
+      - cover.sovevaerelse_vindue
+      - media_player.tv
       - climate.spisestue_11
       - climate.toilet_13
-      - climate.kitchen_9
+      - climate.netatmo_kokken
       - climate.bedroom_14
       - climate.repos_15
       - climate.michael_18
       - climate.christian_16
-      - climate.stue_31
+      - climate.netatmo_stue
       - climate.trainroom_17
       - climate.hall_12
+      - lock.hoveddor_38
+      - lock.vaerksteds_dor_39
   entity_config:
     light.gang:
       name: Lyset i gangen
@@ -35,13 +45,13 @@ google_actions:
     light.spisebord:
       name: Lyset i spisestuen
       room: Spisestue
-    light.fyrrum:
+    light.bryggers:
       name: Lyset i bryggerset
       room: Bryggers
     light.bedroom_group:
       name: Loft lys i soveværelset
       room: Soveværelse
-    light.couch:
+    light.livingroom_corner:
       name: Lyset i stuen
       room: Stue
     light.christian_loft:
@@ -53,7 +63,28 @@ google_actions:
     light.gardsplads:
       name: Lyset i gårdspladsen
       room: Gårdsplads
-    switch.livingroom_tv:
+    light.repos:
+      name: Lyset på repos
+      room: Repos
+    light.trappe:
+      name: Lyset på trappe
+      room: Repos
+    light.carport:
+      name: Lyset i carporten
+      room: Gårdsplads
+      aliases:
+        - Lyset i carporten
+        - Lyset i garagen
+        - Carport
+        - Garage
+    light.bathroom:
+      name: Lyset på badeværelset
+      room: Badeværelse
+      aliases:
+        - Lyset på badeværelset
+        - WCET
+        - Toilettet
+    media_player.tv:
       name: Fjernsyn
       room: Stue
       aliases:
@@ -61,12 +92,30 @@ google_actions:
         - Fjernsynet
     cover.glasparti:
       name: Glasparti
+      room: Stue
     cover.stue_vindue:
-      name: "Stue Vindue"
+      name: Vindue
+      room: Stue
+      aliases:
+        - Vindue
+        - Stue Vindue
+        - Gardin
     cover.terrasse_gardin:
       name: Terrassedør
+      room: Spisestue
     cover.spisestue_gardin:
-      name: "Spisestue Vindue"
+      name: Vindue
+      room: Spisestue
+      aliases:
+        - Vindue
+        - Spisestue Vindue
+        - Gardin
+    cover.kokken_vindue:
+      name: Gardin
+      room: Køkken
+    cover.sovevaerelse_vindue:
+      name: Gardin
+      room: Soveværelse
     climate.hall_12:
       name: Radiatoren i gangen
       room: Gang
@@ -76,7 +125,7 @@ google_actions:
     climate.toilet_13:
       name: Radiatoren i badeværelset
       room: Badeværelse
-    climate.kitchen_9:
+    climate.netatmo_kokken:
       name: Radiatoren i køkkenet
       room: Køkken
     climate.bedroom_14:
@@ -91,9 +140,19 @@ google_actions:
     climate.christian_16:
       name: Radiatoren på Christians værelse
       room: Christian
-    climate.stue_31:
+    climate.netatmo_stue:
       name: Radiatoren i stuen
       room: Stue
     climate.trainroom_17:
       name: Radiatoren ved modeljernbanen
       room: Togrum
+    lock.hoveddor_38:
+      name: Dør
+      room: Gang
+      aliases:
+        - Døren
+        - Hoveddør
+        - Hoveddøren
+    lock.vaerksteds_dor_39:
+      name: Værksteds Dør
+      room: Værksted

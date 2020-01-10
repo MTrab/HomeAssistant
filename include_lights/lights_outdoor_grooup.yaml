@@ -1,0 +1,7 @@
+- platform: group
+  name: Udendørs
+  entities:
+    - light.carport_1
+    - light.carport_2
+    - light.gardsplads_1
+    - light.gardsplads_2

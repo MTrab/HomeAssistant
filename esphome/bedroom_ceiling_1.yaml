@@ -1,0 +1,45 @@
+substitutions:
+  devicename: bedroom_ceiling_1
+  upper_devicename: Bedroom Ceiling 1
+  platform: ESP8266
+  board: esp01_1m
+
+<<: !include .common.yaml
+
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+
+my9231:
+  data_pin: GPIO12
+  clock_pin: GPIO14
+  num_channels: 6
+  num_chips: 2
+
+output:
+  - platform: my9231
+    id: output_blue
+    channel: 0
+  - platform: my9231
+    id: output_red
+    channel: 1
+  - platform: my9231
+    id: output_green
+    channel: 2
+  - platform: my9231
+    id: output_warm_white
+    channel: 4
+  - platform: my9231
+    id: output_cold_white
+    channel: 5
+
+light:
+  - platform: rgbww
+    name: ${upper_devicename}
+    red: output_red
+    green: output_green
+    blue: output_blue
+    cold_white: output_cold_white
+    warm_white: output_warm_white
+    cold_white_color_temperature: 6500 K
+    warm_white_color_temperature: 2800 K
