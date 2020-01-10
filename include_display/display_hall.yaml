@@ -1,0 +1,4 @@
+ - platform: fully_kiosk
+   name: Hall Tablet
+   host: !secret display_hall_host
+   password: !secret display_hall_pass

@@ -18,3 +18,7 @@ following HassIO packages:<br> <ul>
   <li>Samba Share</li>
   <li>Tautulli</li>
 </ul><br>
+<br>
+Additional repositories:<br>
+https://github.com/marcelveldt/hassio-addons-repo<br>
+https://github.com/esphome/hassio<br>
