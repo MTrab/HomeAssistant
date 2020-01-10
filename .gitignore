@@ -24,3 +24,5 @@ Arduino_MySensors/
 .storage/
 scripts/
 deps/
+
+.vscode
