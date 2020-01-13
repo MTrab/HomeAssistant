@@ -8,7 +8,7 @@
     },
     "cccff5c4_6d0668": {
       "lastPayload": {
-        "state": "2",
+        "state": "3",
         "attributes": {
           "friendly_name": "Uge"
         }
@@ -16,7 +16,13 @@
     },
     "9c03fb_ca483c08": {
       "lastPayload": {
-        "state": 2,
+        "state": 1,
+        "attributes": {}
+      }
+    },
+    "7779aa40_6f6514": {
+      "lastPayload": {
+        "state": "on",
         "attributes": {}
       }
     }

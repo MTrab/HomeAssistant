@@ -1,20 +1,41 @@
-- platform: zoneminder
+#- platform: zoneminder
 
 - platform: mjpeg
   name: Anet A8
   still_image_url: http://192.168.1.101:8080/?action=snapshot
   mjpeg_url: http://192.168.1.101:8080/?action=stream
 
-- platform: generic
-  name: Birdcam
-  still_image_url: http://172.16.254.16/GetData.cgi
-  stream_source: http://172.16.254.16/GetData.cgi?a=.mjpg
-  verify_ssl: false
+#- platform: generic
+#  name: Birdcam
+#  still_image_url: http://172.16.254.16/GetData.cgi
+#  stream_source: http://172.16.254.16/GetData.cgi?a=.mjpg
+#  verify_ssl: false
 
-- platform: local_file
-  file_path: /config/www/deepstack/deepstack_latest_person.jpg
-  name: deepstack_latest_person
+#- platform: local_file
+#  file_path: /config/www/deepstack/deepstack_latest_person.jpg
+#  name: deepstack_latest_person
 
-- platform: local_file
-  file_path: /config/www/deepstack/deepstack_latest_car.jpg
-  name: deepstack_latest_car
+#- platform: local_file
+#  file_path: /config/www/deepstack/deepstack_latest_car.jpg
+#  name: deepstack_latest_car
+
+- platform: mjpeg
+  mjpeg_url: http://10.254.254.197:81/mjpg/frontdoor
+  name: Fordør
+  username: !secret bi_username
+  password: !secret bi_password
+  authentication: basic
+
+- platform: mjpeg
+  mjpeg_url: http://10.254.254.197:81/mjpg/driveway
+  name: Indkørsel
+  username: !secret bi_username
+  password: !secret bi_password
+  authentication: basic
+
+- platform: mjpeg
+  mjpeg_url: http://10.254.254.197:81/mjpg/carport
+  name: Carport
+  username: !secret bi_username
+  password: !secret bi_password
+  authentication: basic

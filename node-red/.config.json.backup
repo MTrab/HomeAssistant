@@ -667,7 +667,7 @@
   },
   "node-red-node-email": {
    "name": "node-red-node-email",
-   "version": "1.7.3",
+   "version": "1.7.4",
    "local": false,
    "nodes": {
     "email": {
@@ -1208,7 +1208,7 @@
   },
   "node-red-contrib-cast": {
    "name": "node-red-contrib-cast",
-   "version": "0.2.12",
+   "version": "0.2.13",
    "local": false,
    "nodes": {
     "cast-to-client": {
@@ -1829,6 +1829,81 @@
      "local": true,
      "module": "node-red-contrib-castv2",
      "file": "/config/node-red/node_modules/node-red-contrib-castv2/castv2-sender.js"
+    }
+   }
+  },
+  "node-red-contrib-deconz": {
+   "name": "node-red-contrib-deconz",
+   "version": "1.1.10",
+   "local": false,
+   "nodes": {
+    "in": {
+     "name": "in",
+     "types": [
+      "deconz-input"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/in.js"
+    },
+    "get": {
+     "name": "get",
+     "types": [
+      "deconz-get"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/get.js"
+    },
+    "out": {
+     "name": "out",
+     "types": [
+      "deconz-output"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/out.js"
+    },
+    "event": {
+     "name": "event",
+     "types": [
+      "deconz-event"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/event.js"
+    },
+    "battery": {
+     "name": "battery",
+     "types": [
+      "deconz-battery"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/battery.js"
+    },
+    "server": {
+     "name": "server",
+     "types": [
+      "deconz-server"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/nodes/server.js"
+    },
+    "api": {
+     "name": "api",
+     "types": [],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-deconz",
+     "file": "/config/node-red/node_modules/node-red-contrib-deconz/deconz.js"
     }
    }
   }

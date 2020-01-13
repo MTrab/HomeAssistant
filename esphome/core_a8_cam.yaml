@@ -1,0 +1,34 @@
+substitutions:
+  devicename: corea8cam
+  upper_devicename: Core A8 Cam
+  fallback: CoreA8Cam
+  platform: ESP32
+  board: esp32dev
+  ip: 10.254.254.200
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+esp32_camera:
+  name: "$upper_devicename"
+  external_clock:
+    pin: GPIO0
+    frequency: 20MHz
+  i2c_pins:
+    sda: GPIO26
+    scl: GPIO27
+  data_pins: [GPIO5, GPIO18, GPIO19, GPIO21, GPIO36, GPIO39, GPIO34, GPIO35]
+  vsync_pin: GPIO25
+  href_pin: GPIO23
+  pixel_clock_pin: GPIO22
+  power_down_pin: GPIO32
+
+switch:
+  - platform: gpio
+    pin: GPIO4
+    name: "$upper_devicename Flash"
+  - platform: gpio
+    pin: GPIO33
+    inverted: true
+    name: "$upper_devicename Status LED"

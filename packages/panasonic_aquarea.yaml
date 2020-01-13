@@ -9,7 +9,10 @@
 ## 1.0.0 (08-01-2020)
 ##   Added
 ##   - Initial version
-
+##
+## 1.1.0 (10-01-2020)
+##   Added
+##   - Added power switch and Fan RPM sensors
 
 
 # Automations #
@@ -529,10 +532,21 @@ sensor:
 # switch #
 ##########
 switch:
+#Turn on/off holiday mode
   - platform: mqtt
     name: Panasonic Aquarea Holiday Mode
     command_topic: "panasonic_heat_pump/SetHoliday"
     state_topic: "panasonic_heat_pump/sdc/Holidaymode_State"
+    qos: 0
+    payload_on: "1"
+    payload_off: "0"
+    retain: false
+  
+#Turn on/off heatpump  
+  - platform: mqtt
+    name: Panasonic Aquarea Power
+    command_topic: "panasonic_heat_pump/SetPower"
+    state_topic: "panasonic_heat_pump/sdc/Power_State"
     qos: 0
     payload_on: "1"
     payload_off: "0"

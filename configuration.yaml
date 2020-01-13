@@ -57,7 +57,7 @@ device_tracker: !include include_conf/conf_device_tracker.yaml
 tts: !include include_conf/conf_tts.yaml
 recorder: !include include_conf/conf_recorder.yaml
 cloud: !include include_conf/conf_cloud.yaml
-zoneminder: !include include_conf/conf_zoneminder.yaml
+#zoneminder: !include include_conf/conf_zoneminder.yaml
 camera: !include include_conf/conf_camera.yaml
 image_processing: !include include_conf/conf_imageprocessing.yaml
 netatmo: !include include_conf/conf_netatmo.yaml
@@ -66,6 +66,8 @@ repetier: !include include_conf/conf_repetier.yaml
 modbus: !include include_conf/conf_modbus.yaml
 unifi: !include include_conf/conf_unifi.yaml
 proximity: !include include_conf/conf_proximity.yaml
+zwave: !include include_conf/conf_zwave.yaml
+mbweather: !include include_conf/conf_mbweather.yaml
 scene: !include scenes.yaml
 
 # Include_list
@@ -94,12 +96,6 @@ input_number: !include_dir_merge_named include_numbers/
 #  email: !secret landroid_email
 #  password: !secret landroid_pass
 
-mbweather:
-  host: 10.254.254.112
-  username: meteobridge
-  password: chilagahek
-  use_ssl: false
-
 #logger:
 #  default: warning
 #  logs:
@@ -107,7 +103,3 @@ mbweather:
 #    homeassistant.core: warning
 #    homeassistant.components.cloud.google_config: debug
 
-
-zwave:
-  usb_path: /dev/serial/by-id/usb-0658_0200-if00
-  network_key: "0xD3, 0x55, 0x8C, 0xB0, 0xC2, 0xEF, 0xE9, 0x76, 0xBC, 0xB3, 0xDB, 0x0E, 0x09, 0x1D, 0x55, 0x8B"

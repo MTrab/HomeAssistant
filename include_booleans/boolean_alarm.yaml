@@ -1,0 +1,3 @@
+alarm_ready:
+  name: Alarm Klar
+  initial: off
