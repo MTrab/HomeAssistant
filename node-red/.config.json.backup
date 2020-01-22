@@ -1835,7 +1835,7 @@
   "node-red-contrib-deconz": {
    "name": "node-red-contrib-deconz",
    "version": "1.1.10",
-   "local": false,
+   "local": true,
    "nodes": {
     "in": {
      "name": "in",

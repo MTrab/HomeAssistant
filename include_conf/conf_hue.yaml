@@ -1,3 +1,5 @@
 bridges:
   - host: 192.168.1.131
-    filename: phue-2.conf
+    #filename: phue-2.conf
+    allow_unreachable: true
+    allow_hue_groups: true

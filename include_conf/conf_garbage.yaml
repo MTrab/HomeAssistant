@@ -1,0 +1,9 @@
+sensors:
+- name: "Restaffald"
+  frequency: "odd-weeks"
+  collection_days: "thu"
+- name: "Pap"
+  frequency: "monthly"
+  weekday_order_number: 
+  - 3
+  collection_days: "wed"

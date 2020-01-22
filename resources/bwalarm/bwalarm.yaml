@@ -4,29 +4,38 @@ passcode_attempts: 3
 passcode_attempts_timeout: 30
 admin_password: Horsensvej50
 panel:
-  cameras: []
-  enable_clock: true
+  cameras:
+  - camera.fordor
+  enable_clock: 'True'
   panel_title: Alarm
   enable_sensors_panel: 'True'
   round_buttons: 'True'
   shadow_effect: 'True'
   hide_passcode: 'True'
   camera_update_interval: ''
-  hide_sidebar: true
-  hide_sensors: true
-  enable_serif_font: false
+  hide_sidebar: 'True'
+  hide_sensors: 'True'
+  enable_serif_font: 'False'
+  enable_camera_panel: true
 enable_night_mode: false
 states:
   armed_away:
     immediate:
     - binary_sensor.kitchen_pir_3
     - binary_sensor.lille_vindue_57
+    - sensor.dw_havedor_stue_battery_level
+    - sensor.dw_stue_lille_vindue_battery_level
+    - sensor.dw_varkstedsdor_battery_level
+    - binary_sensor.motion_bathroom
+    - binary_sensor.motion_kitchen
     delayed:
     - binary_sensor.gang_motion_sensor
     - binary_sensor.frontdoor_59
+    - sensor.dw_frontdoor_battery_level
     override:
     - binary_sensor.frontdoor_59
     - binary_sensor.gang_motion_sensor
+    - sensor.dw_frontdoor_battery_level
     pending_time: 15
     warning_time: 30
     trigger_time: 600

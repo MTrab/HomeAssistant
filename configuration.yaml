@@ -48,7 +48,7 @@ mobile_app:
 alarm_control_panel: !include resources/bwalarm/bwalarm.yaml
 vera: !include include_conf/conf_vera.yaml
 hue: !include include_conf/conf_hue.yaml
-mysensors: !include include_conf/conf_mysensors.yaml
+#mysensors: !include include_conf/conf_mysensors.yaml
 panel_custom: !include include_conf/conf_panel_custom.yaml
 panel_iframe: !include include_conf/conf_panel_iframe.yaml
 notify: !include include_conf/conf_notify.yaml
@@ -66,8 +66,8 @@ repetier: !include include_conf/conf_repetier.yaml
 modbus: !include include_conf/conf_modbus.yaml
 unifi: !include include_conf/conf_unifi.yaml
 proximity: !include include_conf/conf_proximity.yaml
-zwave: !include include_conf/conf_zwave.yaml
 mbweather: !include include_conf/conf_mbweather.yaml
+garbage_collection: !include include_conf/conf_garbage.yaml
 scene: !include scenes.yaml
 
 # Include_list

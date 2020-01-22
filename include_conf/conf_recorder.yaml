@@ -98,3 +98,9 @@ include:
     - sensor.panasonic_aquarea_cop
     - sensor.panasonic_aquarea_outdoor_pipe_temperature
     - sensor.panasonic_aquarea_indoor_pipe_temperature
+    - sensor.th_bathroom_temperature
+    - sensor.th_bathroom_humidity
+    - sensor.th_freezer_temperature
+    - sensor.th_freezer_humidity
+    - sensor.th_stue_temperature
+    - sensor.th_stue_humidity

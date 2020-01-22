@@ -22,7 +22,7 @@ automation:
   - alias: Set quiet level selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/Quietmode_Level"
+      topic: "panasonic_heat_pump/sdc/QuietMode_Level"
     action:
       service: input_select.select_option
       data_template:
@@ -88,7 +88,7 @@ automation:
   - alias: Set heatmode selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/OpMode_State"
+      topic: "panasonic_heat_pump/sdc/OperatingMode_State"
     action:
       service: input_select.select_option
       data_template:
@@ -110,7 +110,7 @@ automation:
     action:
       service: mqtt.publish
       data_template:
-        topic: panasonic_heat_pump/SetOpMode
+        topic: panasonic_heat_pump/SetOperationMode
         retain: false #IMPORTANT! ALWAYS set retain flag false for commands!
         payload_template: >-
           {%- if states('input_select.panasonic_aquarea_heatmode') == "Heat" -%}
@@ -125,7 +125,7 @@ automation:
   - alias: Set heatshift selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/Z1_HeatShift_Temp"
+      topic: "panasonic_heat_pump/sdc/Z1_HeatRequest_Temp"
     action:
       service: input_number.set_value
       data_template:
@@ -141,7 +141,7 @@ automation:
     action:
       service: mqtt.publish
       data_template:
-        topic: panasonic_heat_pump/SetShiftTemperature
+        topic: panasonic_heat_pump/SetZ1HeatRequestTemperature
         retain: false #IMPORTANT! ALWAYS set retain flag false for commands!
         payload_template: >-
           {{ "%.0f" % (states('input_number.panasonic_aquarea_heatshift') | int) }}
@@ -150,7 +150,7 @@ automation:
   - alias: Set tank target temperature selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/Tank_Target_Temp"
+      topic: "panasonic_heat_pump/sdc/DHW_Target_Temp"
     action:
       service: input_number.set_value
       data_template:
@@ -166,7 +166,7 @@ automation:
     action:
       service: mqtt.publish
       data_template:
-        topic: panasonic_heat_pump/SetTankTemp
+        topic: panasonic_heat_pump/SetDHWTemp
         retain: false #IMPORTANT! ALWAYS set retain flag false for commands!
         payload_template: >-
           {{ "%.0f" % (states('input_number.panasonic_aquarea_tank_temp') | int) }}
@@ -207,7 +207,6 @@ input_select:
       - 60 min
       - 90 min
 
-  #82 = heat only, 83 = cool only, 88 = Auto, 98 = Heat+DHW, 99 = Cool+DHW, 104 = Auto + DHW
   panasonic_aquarea_heatmode:
     name: Set Heat Mode
     options:
@@ -221,7 +220,7 @@ sensor:
   #TOP0 - Power state
   - platform: mqtt
     name: Panasonic Aquarea Power State
-    state_topic: "panasonic_heat_pump/sdc/Power_State"
+    state_topic: "panasonic_heat_pump/sdc/Heatpump_State"
     value_template: >-
       {%- if value == "0" -%}
         Off
@@ -238,7 +237,7 @@ sensor:
   #TOP4 - Heat mode (Hot water, Heat or Hot water + heat)
   - platform: mqtt
     name: Panasonic Aquarea Mode
-    state_topic: "panasonic_heat_pump/sdc/OpMode_State"
+    state_topic: "panasonic_heat_pump/sdc/OperatingMode_State"
     value_template: >-
       {%- if value == "0" -%}
         Heat
@@ -283,13 +282,13 @@ sensor:
   #TOP9 - Tank set temperature
   - platform: mqtt
     name: Panasonic Aquarea Tank Set Temperature
-    state_topic: "panasonic_heat_pump/sdc/Tank_Target_Temp"
+    state_topic: "panasonic_heat_pump/sdc/DHW_Target_Temp"
     unit_of_measurement: '°C'
 
   #TOP10 - Tank current temperature
   - platform: mqtt
     name: Panasonic Aquarea Actual Tank Temperature
-    state_topic: "panasonic_heat_pump/sdc/Tank_Temp"
+    state_topic: "panasonic_heat_pump/sdc/DHW_Temp"
     unit_of_measurement: '°C'
 
   #TOP11 - Compressor Operating Time
@@ -332,7 +331,7 @@ sensor:
   #TOP18 - Heating quiet mode
   - platform: mqtt
     name: Panasonic Aquarea Quiet Mode
-    state_topic: "panasonic_heat_pump/sdc/Quietmode_Level"
+    state_topic: "panasonic_heat_pump/sdc/QuietMode_Level"
     value_template: >-
       {%- if value == "4" -%}
         Scheduled
@@ -343,7 +342,7 @@ sensor:
   #TOP19 - Holiday Mode
   - platform: mqtt
     name: Panasonic Aquarea Holiday Mode
-    state_topic: "panasonic_heat_pump/sdc/Holidaymode_State"
+    state_topic: "panasonic_heat_pump/sdc/HolidayMode_State"
     value_template: >-
       {%- if value == "0" -%}
         Off
@@ -354,7 +353,7 @@ sensor:
   #TOP20 - 3-way valve state
   - platform: mqtt
     name: Panasonic Aquarea 3-way Valve
-    state_topic: "panasonic_heat_pump/sdc/Valve_State"
+    state_topic: "panasonic_heat_pump/sdc/ThreeWayValve_State"
     value_template: >-
       {%- if value == "0" -%}
         Room
@@ -382,7 +381,7 @@ sensor:
   #TOP27 - Heatshift Temperature
   - platform: mqtt
     name: Panasonic Aquarea Heatshift Temperature
-    state_topic: "panasonic_heat_pump/sdc/Z1_HeatShift_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Z1_HeatRequest_Temp"
     unit_of_measurement: '°C'
 
   #TOP40 - DHW power produced
@@ -429,13 +428,13 @@ sensor:
   #TOP53 - Eva Outlet temp
   - platform: mqtt
     name: Panasonic Aquarea Eva Outlet Temperature
-    state_topic: "panasonic_heat_pump/sdc/EvaOutlet_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Eva_Outlet_Temp"
     unit_of_measurement: '°C'
 
   #TOP54 - Bypass Outlet temp
   - platform: mqtt
     name: Panasonic Aquarea Bypass Outlet Temperature
-    state_topic: "panasonic_heat_pump/sdc/BypassOutlet_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Bypass_Outlet_Temp"
     unit_of_measurement: '°C'
 
   #TOP55 - lpm temp
@@ -447,7 +446,7 @@ sensor:
   #TOP58 - Tank electric heater allowed state
   - platform: mqtt
     name: Panasonic Aquarea Tank Heater Enabled
-    state_topic: "panasonic_heat_pump/sdc/TankHeater_State"
+    state_topic: "panasonic_heat_pump/sdc/DHW_Heater_State"
 
   #TOP59 - Water electric heater allowed state
   - platform: mqtt
@@ -487,6 +486,18 @@ sensor:
     name: Panasonic Aquarea Pump Speed
     state_topic: "panasonic_heat_pump/sdc/Pump_Speed"
     unit_of_measurement: "R/min"
+
+  #TOP66 - Low pressure
+  - platform: mqtt
+    name: Panasonic Aquarea Low pressure
+    state_topic: "panasonic_heat_pump/sdc/Low_Pressure"
+    unit_of_measurement: "Kgf/cm2"
+
+  #TOP66 - Compressor Current
+  - platform: mqtt
+    name: Panasonic Aquarea Compressor Current
+    state_topic: "panasonic_heat_pump/sdc/Compressor_Current"
+    unit_of_measurement: "A"
 
   #### SENSORS BELOW ARE NOT IN FIRMWARE ####
   #COP Calculations
@@ -536,7 +547,7 @@ switch:
   - platform: mqtt
     name: Panasonic Aquarea Holiday Mode
     command_topic: "panasonic_heat_pump/SetHoliday"
-    state_topic: "panasonic_heat_pump/sdc/Holidaymode_State"
+    state_topic: "panasonic_heat_pump/sdc/HolidayMode_State"
     qos: 0
     payload_on: "1"
     payload_off: "0"
@@ -545,8 +556,8 @@ switch:
 #Turn on/off heatpump  
   - platform: mqtt
     name: Panasonic Aquarea Power
-    command_topic: "panasonic_heat_pump/SetPower"
-    state_topic: "panasonic_heat_pump/sdc/Power_State"
+    command_topic: "panasonic_heat_pump/SetHeatpump"
+    state_topic: "panasonic_heat_pump/sdc/Heatpump_State"
     qos: 0
     payload_on: "1"
     payload_off: "0"

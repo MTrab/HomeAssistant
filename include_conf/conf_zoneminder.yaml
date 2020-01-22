@@ -1,5 +1,0 @@
-#host: !secret zm_host
-#path: /zm/
-#path_zms: /cgi-bin/nph-zms
-#username: !secret zm_user
-#password: !secret zm_pass

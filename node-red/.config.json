@@ -770,7 +770,7 @@
   },
   "node-red-node-rbe": {
    "name": "node-red-node-rbe",
-   "version": "0.2.6",
+   "version": "0.2.8",
    "local": false,
    "nodes": {
     "rbe": {
