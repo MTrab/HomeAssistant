@@ -15,6 +15,7 @@ core
 raspbee_gateway_config*.dat
 google_calendars.yaml
 .google.token
+fcm_android_registrations.conf
 
 www/googlec3c891a10900fa63.html
 node-red/flows_cred.json
