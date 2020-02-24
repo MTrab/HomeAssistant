@@ -13,6 +13,7 @@ telegraf.conf
 ui-lovelace.yaml
 core
 raspbee_gateway_config*.dat
+google_calendars.yaml
 
 www/googlec3c891a10900fa63.html
 node-red/flows_cred.json
