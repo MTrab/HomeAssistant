@@ -1,0 +1,28 @@
+substitutions:
+  devicename: weatherstation
+  upper_devicename: Vejrstation
+  fallback: weather
+  platform: ESP8266
+  board: d1_mini
+  ip: 10.254.254.252
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+i2c:
+  scan: False
+  
+binary_sensor:
+  - platform: status
+    name: "$upper_devicename Status"
+
+sensor:
+  - platform: bmp085
+    temperature:
+      name: "Outside Temperature"
+    pressure:
+      name: "Outside Pressure"
+    update_interval: 60s
+  - platform: uptime
+    name: "$upper_devicename  Uptime"

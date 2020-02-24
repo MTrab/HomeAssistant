@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: "Vandmåler"
+  state_topic: "wmbusmeters/76075868"
+  value_template: "{{ '%0.2f' % value_json.total_m3 | float }}"
+  unit_of_measurement: "m3"
+  json_attributes_topic: "wmbusmeters/76075868"

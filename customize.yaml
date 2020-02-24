@@ -264,3 +264,138 @@ cover.kokken_vindue:
   icon: mdi:blinds
 cover.sovevaerelse_vindue:
   icon: mdi:blinds
+sensor.gang_temperatur:
+  unit_of_measurement: °C
+sensor.stue_fugtighed:
+  unit_of_measurement: '%'
+sensor.stue_temperatur:
+  unit_of_measurement: °C
+sensor.badevaerelse_fugtighed:
+  unit_of_measurement: '%'
+sensor.badevaerelse_temperatur:
+  unit_of_measurement: °C
+sensor.water:
+  friendly_name: Dagligt vand forbrug
+  unit_of_measurement: m3
+sensor.panasonic_aquarea_3_way_valve:
+  friendly_name: 3-vejs Ventil
+sensor.panasonic_aquarea_actual_tank_temperature:
+  friendly_name: Aktuel Tank Temperatur
+sensor.panasonic_aquarea_bypass_outlet_temperature:
+  friendly_name: Bypass Outlet Temperatur
+sensor.panasonic_aquarea_cop:
+  friendly_name: COP
+sensor.panasonic_aquarea_compressor_current:
+  friendly_name: Kompressor Strømforbrug
+sensor.panasonic_aquarea_compressor_frequency:
+  friendly_name: Kompressor Frekvens
+sensor.panasonic_aquarea_compressor_operating_hours:
+  friendly_name: Drift Timer
+sensor.panasonic_aquarea_compressor_start_stop_counter:
+  friendly_name: Start/Stop Tæller
+sensor.panasonic_aquarea_defrost_state:
+  friendly_name: Afrimning
+sensor.panasonic_aquarea_defrost_temperature:
+  friendly_name: Afrimning Temperatur
+sensor.panasonic_aquarea_discharge_temperature:
+  friendly_name: Discharge Temperatur
+sensor.panasonic_aquarea_dhw_power_consumed:
+  friendly_name: DHW Effekt Forbrug
+sensor.panasonic_aquarea_dhw_power_produced:
+  friendly_name: DHW Effekt Genereret
+sensor.panasonic_aquarea_eva_outlet_temperature:
+  friendly_name: Eva Outlet Temperatur
+sensor.panasonic_aquarea_external_heater_state:
+  friendly_name: Tilskuds Varmer
+sensor.panasonic_aquarea_fan_1_speed:
+  friendly_name: Hastighed Blæser 1
+sensor.panasonic_aquarea_fan_2_speed:
+  friendly_name: Hastighed Blæser 2
+sensor.panasonic_aquarea_heatshift_temperature:
+  friendly_name: Varmeforskydning
+sensor.panasonic_aquarea_high_pressure:
+  friendly_name: Højtryksrør
+switch.panasonic_aquarea_holiday_mode:
+  friendly_name: Ferietilstand
+  icon: mdi:airplane-takeoff
+sensor.panasonic_aquarea_holiday_mode:
+  friendly_name: Status for Ferietilstand
+  icon: mdi:airplane-takeoff
+sensor.panasonic_aquarea_inlet_temperature:
+  friendly_name: Returløb
+sensor.panasonic_aquarea_inside_pipe_temperature:
+  friendly_name: Inside Pipe Temperature
+sensor.panasonic_aquarea_internal_heater_state:
+  friendly_name: Intern Varmer Status
+sensor.panasonic_aquarea_ipm_temperature:
+  friendly_name: Ipm Temperatur
+sensor.panasonic_aquarea_last_error:
+  friendly_name: Seneste Fejl
+sensor.panasonic_aquarea_low_pressure:
+  friendly_name: Lavtryksrør
+sensor.panasonic_aquarea_mode:
+  friendly_name: Drift Tilstand
+sensor.panasonic_aquarea_outdoor_ambient:
+  friendly_name: Udendørs Temperatur
+sensor.panasonic_aquarea_outdoor_pipe_temperature:
+  friendly_name: Outdoor Pipe Temperature
+sensor.panasonic_aquarea_outlet_target_temperature:
+  friendly_name: Ønsket Fremløbs Temperatur
+sensor.panasonic_aquarea_outlet_temperature:
+  friendly_name: Fremløbs Temperatur
+switch.panasonic_aquarea_power:
+  friendly_name: Tænd/Sluk
+  icon: mdi:power
+sensor.panasonic_aquarea_power_consumed:
+  friendly_name: Effekt Brugt
+sensor.panasonic_aquarea_power_produced:
+  friendly_name: Effekt Genereret
+  icon: mdi:flash-circle
+sensor.panasonic_aquarea_power_state:
+  friendly_name: Tænd/Sluk Status
+  icon: mdi:power
+sensor.panasonic_aquarea_powerfull_mode:
+  friendly_name: Kraftfuld Drift
+sensor.panasonic_aquarea_pump_flow:
+  friendly_name: Pumpe Flow
+sensor.panasonic_aquarea_pump_speed:
+  friendly_name: Pumpe Hastighed
+sensor.panasonic_aquarea_quiet_mode:
+  friendly_name: Stille Drift
+sensor.panasonic_aquarea_tank_heater_enabled:
+  friendly_name: Tank Varme Aktiveret
+sensor.panasonic_aquarea_tank_set_temperature:
+  friendly_name: Ønsket Tank Temperatur
+sensor.panasonic_aquarea_water_hex_outlet_temperature:
+  friendly_name: Water HEX Outlet Temperature
+sensor.panasonic_aquarea_water_heater_enabled:
+  friendly_name: Vand Varmer Aktiveret
+sensor.panasonic_aquarea_w_consumption:
+  friendly_name: Effekt Forbrug
+  icon: mdi:flash-circle
+sensor.panasonic_aquarea_w_production:
+  friendly_name: Effekt Genereret
+  icon: mdi:flash-circle
+input_select.panasonic_aquarea_heatmode:
+  friendly_name: Drift Tilstand
+  icon: mdi:barley
+input_number.panasonic_aquarea_heatshift:
+  friendly_name: Varmeforskydning
+  icon: mdi:car-seat-heater
+input_select.panasonic_aquarea_powermode:
+  friendly_name: Kraftfuld Drift
+  icon: mdi:arm-flex
+input_select.panasonic_aquarea_quietmode:
+  friendly_name: Stille Drift
+  icon: mdi:volume-off
+input_number.panasonic_aquarea_tank_temp:
+  friendly_name: Ønsket Tank Temperatur
+  icon: mdi:coolant-temperature
+sensor.electrical_usage:
+  friendly_name: Daglig El Forbrug
+sensor.kam_v_p1:
+  friendly_name: Spænding Fase 1
+sensor.kam_v_p2:
+  friendly_name: Spænding Fase 2
+sensor.kam_v_p3:
+  friendly_name: Spænding Fase 3

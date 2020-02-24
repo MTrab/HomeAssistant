@@ -1,5 +1,4 @@
 - platform: template
-# Outside wire = 4
   sensors:
     anet_a8_jobname:
       value_template: >-

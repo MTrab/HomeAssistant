@@ -667,7 +667,7 @@
   },
   "node-red-node-email": {
    "name": "node-red-node-email",
-   "version": "1.7.4",
+   "version": "1.7.6",
    "local": false,
    "nodes": {
     "email": {
@@ -1904,6 +1904,23 @@
      "local": true,
      "module": "node-red-contrib-deconz",
      "file": "/config/node-red/node_modules/node-red-contrib-deconz/deconz.js"
+    }
+   }
+  },
+  "node-red-contrib-finite-statemachine": {
+   "name": "node-red-contrib-finite-statemachine",
+   "version": "0.2.10",
+   "local": false,
+   "nodes": {
+    "finite-state-machine": {
+     "name": "finite-state-machine",
+     "types": [
+      "finite-state-machine"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-finite-statemachine",
+     "file": "/config/node-red/node_modules/node-red-contrib-finite-statemachine/dist/finite-state-machine-node.js"
     }
    }
   }

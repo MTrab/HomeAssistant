@@ -1,0 +1,21 @@
+- platform: mqtt
+  name: "Roberta"
+  supported_features:
+    - turn_on
+    - turn_off
+    - stop
+    - return_home
+    - battery
+    - status
+  command_topic: "roomba/commands"
+  battery_level_topic: "roomba/json"
+  battery_level_template: "{{ value_json.battery }}"
+  charging_topic: "vacuum/json"
+  charging_template: "{{ value_json.charging }}"
+  cleaning_topic: "vacuum/json"
+  cleaning_template: "{{ value_json.cleaning }}"
+  docked_topic: "vacuum/json"
+  docked_template: "{{ value_json.docked }}"
+  payload_return_to_base: "dock"
+  payload_turn_on: "start"
+  payload_turn_off: "stop"

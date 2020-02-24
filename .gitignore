@@ -12,6 +12,7 @@ OZW_Log.txt
 telegraf.conf
 ui-lovelace.yaml
 core
+raspbee_gateway_config*.dat
 
 www/googlec3c891a10900fa63.html
 node-red/flows_cred.json
@@ -25,5 +26,6 @@ Arduino_MySensors/
 scripts/
 deps/
 node-red/
+resources/
 
 .vscode

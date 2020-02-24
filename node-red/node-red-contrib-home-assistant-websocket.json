@@ -8,7 +8,7 @@
     },
     "cccff5c4_6d0668": {
       "lastPayload": {
-        "state": "4",
+        "state": "9",
         "attributes": {
           "friendly_name": "Uge"
         }
@@ -16,13 +16,61 @@
     },
     "9c03fb_ca483c08": {
       "lastPayload": {
-        "state": 1,
+        "state": 5,
         "attributes": {}
       }
     },
     "7779aa40_6f6514": {
       "lastPayload": {
         "state": "on",
+        "attributes": {}
+      }
+    },
+    "4dd659f_3d70aa8": {
+      "lastPayload": {
+        "state": 20,
+        "attributes": {}
+      }
+    },
+    "1d0c74a9_f5d6fb": {
+      "lastPayload": {
+        "state": 18,
+        "attributes": {}
+      }
+    },
+    "b8de16db_0af958": {
+      "lastPayload": {
+        "state": 18,
+        "attributes": {}
+      }
+    },
+    "d5eee3a0_73331": {
+      "lastPayload": {
+        "state": 22,
+        "attributes": {}
+      }
+    },
+    "9fdbf0cd_21d1": {
+      "lastPayload": {
+        "state": 22,
+        "attributes": {}
+      }
+    },
+    "2145d804_1abe58": {
+      "lastPayload": {
+        "state": 22,
+        "attributes": {}
+      }
+    },
+    "72043b69_5d3934": {
+      "lastPayload": {
+        "state": 22,
+        "attributes": {}
+      }
+    },
+    "d9da6067_90cf1": {
+      "lastPayload": {
+        "state": 22,
         "attributes": {}
       }
     }

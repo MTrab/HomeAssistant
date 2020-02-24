@@ -1,13 +1,17 @@
-- id: '1576516314674'
-  alias: Turn off after 1 second
-  description: Turns off a switch 1 second after it have been turned on
+- id: '1581973993160'
+  alias: Set Deconz config on startup
+  description: ''
   trigger:
-  - entity_id: switch.lk_panel_1
-    from: 'off'
+  - entity_id: sensor.deconz_container_state
+    for:
+      seconds: 10
     platform: state
-    to: 'on'
+    to: running
   condition: []
   action:
-  - delay: 1s
-  - entity_id: switch.lk_panel_1
-    service: switch.turn_off
+  - data:
+      data:
+        config:
+          duration: 10
+      entity: binary_sensor.motion_bathroom
+    service: deconz.configure

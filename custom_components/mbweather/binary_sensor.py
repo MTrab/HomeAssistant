@@ -12,31 +12,36 @@ from datetime import timedelta
 
 import homeassistant.helpers.config_validation as cv
 import voluptuous as vol
-from homeassistant.components.binary_sensor import (ENTITY_ID_FORMAT,
-                                                    PLATFORM_SCHEMA,
-                                                    BinarySensorDevice)
-from homeassistant.const import (ATTR_ATTRIBUTION, CONF_ENTITY_NAMESPACE,
-                                 CONF_MONITORED_CONDITIONS, CONF_NAME)
-from homeassistant.helpers.entity import Entity, generate_entity_id
-from . import ATTRIBUTION, MBDATA
+from homeassistant.components.binary_sensor import (
+    ENTITY_ID_FORMAT,
+    PLATFORM_SCHEMA,
+    BinarySensorDevice,
+)
+from homeassistant.const import ATTR_ATTRIBUTION, CONF_MONITORED_CONDITIONS, CONF_NAME
+from homeassistant.helpers.entity import generate_entity_id
+from . import DEFAULT_ATTRIBUTION, MBDATA, DOMAIN
 
-DEPENDENCIES = ['mbweather']
+DEPENDENCIES = ["mbweather"]
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = 'mbweather'
+SCAN_INTERVAL = timedelta(seconds=5)
 
 SENSOR_TYPES = {
-    'raining': ['Raining', None, 'mdi:water', 'mdi:water-off'],
-    'lowbattery': ['Battery Status', None, 'mdi:battery-10', 'mdi:battery'],
-    'freezing': ['Freezing', None, 'mdi:thermometer-minus', 'mdi:thermometer-plus']
+    "raining": ["Raining", None, "mdi:water", "mdi:water-off"],
+    "lowbattery": ["Battery Status", None, "mdi:battery-10", "mdi:battery"],
+    "freezing": ["Freezing", None, "mdi:thermometer-minus", "mdi:thermometer-plus"],
 }
 
-PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
-    vol.Required(CONF_MONITORED_CONDITIONS, default=list(SENSOR_TYPES)):
-        vol.All(cv.ensure_list, [vol.In(SENSOR_TYPES)]),
-    vol.Optional(CONF_NAME, default=DOMAIN): cv.string
-})
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
+    {
+        vol.Required(CONF_MONITORED_CONDITIONS, default=list(SENSOR_TYPES)): vol.All(
+            cv.ensure_list, [vol.In(SENSOR_TYPES)]
+        ),
+        vol.Optional(CONF_NAME, default=DOMAIN): cv.string,
+    }
+)
+
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the MBWeather binary sensor platform."""
@@ -44,7 +49,7 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     name = config.get(CONF_NAME)
     data = hass.data[MBDATA]
 
-    if data.data['time'] is None:
+    if not data:
         return
 
     sensors = []
@@ -54,16 +59,22 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
     add_entities(sensors, True)
 
+
 class MBweatherBinarySensor(BinarySensorDevice):
     """ Implementation of a MBWeather Binary Sensor. """
 
     def __init__(self, hass, data, condition, name):
         """Initialize the sensor."""
+        self.data = data.sensors
         self._condition = condition
-        self.data = data
+        self._state = self.data[self._condition]
         self._device_class = SENSOR_TYPES[self._condition][1]
         self._name = SENSOR_TYPES[self._condition][0]
-        self.entity_id = generate_entity_id(ENTITY_ID_FORMAT, '{} {}'.format('mbw', SENSOR_TYPES[self._condition][0]), hass=hass)
+        self.entity_id = generate_entity_id(
+            ENTITY_ID_FORMAT,
+            "{} {}".format("mbw", SENSOR_TYPES[self._condition][0]),
+            hass=hass,
+        )
 
     @property
     def name(self):
@@ -73,17 +84,16 @@ class MBweatherBinarySensor(BinarySensorDevice):
     @property
     def is_on(self):
         """Return the state of the sensor."""
-        if self._condition in self.data.data:
-            variable = self.data.data[self._condition]
-            if not (variable is None):
-                return variable
-        return None
+        return self._state is True
 
     @property
     def icon(self):
         """Icon to use in the frontend."""
-        return SENSOR_TYPES[self._condition][2] if self.data.data[self._condition] \
+        return (
+            SENSOR_TYPES[self._condition][2]
+            if self.data[self._condition]
             else SENSOR_TYPES[self._condition][3]
+        )
 
     @property
     def device_class(self):
@@ -94,9 +104,10 @@ class MBweatherBinarySensor(BinarySensorDevice):
     def device_state_attributes(self):
         """Return the state attributes of the device."""
         attr = {}
-        attr[ATTR_ATTRIBUTION] = ATTRIBUTION
+        attr[ATTR_ATTRIBUTION] = DEFAULT_ATTRIBUTION
         return attr
 
     def update(self):
         """Update current conditions."""
-        self.data.update()
+        self._state = self.data[self._condition]
+

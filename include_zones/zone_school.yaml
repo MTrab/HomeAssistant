@@ -1,17 +1,17 @@
-- name: Århus Tech Halmstadsgade
-  latitude: 56.185069
-  longitude: 10.193277
-  radius: 200
-  icon: mdi:school
+#- name: Århus Tech Halmstadsgade
+#  latitude: 56.185069
+#  longitude: 10.193277
+#  radius: 200
+#  icon: mdi:school
 
-- name: FGU Hørning
-  latitude: 56.083395
-  longitude: 10.034694
-  radius: 40
-  icon: mdi:school
+#- name: FGU Hørning
+#  latitude: 56.083395
+#  longitude: 10.034694
+#  radius: 40
+#  icon: mdi:school
 
-- name: FGU Værksteder
-  latitude: 56.081760
-  longitude: 10.034216
-  radius: 100
-  icon: mdi:school
+#- name: FGU Værksteder
+#  latitude: 56.081760
+#  longitude: 10.034216
+#  radius: 100
+#  icon: mdi:school

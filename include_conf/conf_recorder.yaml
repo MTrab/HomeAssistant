@@ -1,5 +1,5 @@
 db_url: !secret recorder_mysql
-purge_keep_days: 10
+purge_keep_days: 7
 include:
   entities:
     - input_boolean.heat_diningroom
@@ -104,3 +104,31 @@ include:
     - sensor.th_freezer_humidity
     - sensor.th_stue_temperature
     - sensor.th_stue_humidity
+    - sensor.heat_save_michael
+    - sensor.heat_save_christian
+    - sensor.heat_save_disponibelt
+    - sensor.heat_save_spisestue
+    - sensor.heat_save_stue
+    - sensor.heat_save_kokken
+    - sensor.heat_save_kokken_direct
+    - sensor.gang_temperatur
+    - sensor.bryggers_temperatur
+    - sensor.stue_temperatur
+    - sensor.badevaerelse_temperatur
+    - sensor.stue_fugtighed
+    - sensor.badevaerelse_fugtighed
+    - sensor.water
+    - sensor.electrical_usage
+    - sensor.kam_v_p1
+    - sensor.kam_v_p2
+    - sensor.kam_v_p3
+    - sensor.outside_temperature
+    - sensor.outside_pressure
+    - sensor.kamstrup_rest_ampere_p1
+    - sensor.kamstrup_rest_ampere_p2
+    - sensor.kamstrup_rest_ampere_p3
+    - sensor.kamstrup_rest_counter
+    - sensor.kamstrup_rest_spaending_p1
+    - sensor.kamstrup_rest_spaending_p2
+    - sensor.kamstrup_rest_spaending_p3
+    - sensor.kamstrup_rest_total_watt

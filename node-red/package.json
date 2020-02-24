@@ -9,6 +9,7 @@
         "node-red-contrib-blindcontroller": "~4.8.5",
         "node-red-contrib-castv2": "~1.1.6",
         "node-red-contrib-deconz": "~1.1.10",
+        "node-red-contrib-finite-statemachine": "~0.2.10",
         "node-red-contrib-google-home-notifier-offline": "~0.1.0",
         "node-red-contrib-google-home-notify-volume-adjustable": "0.0.10",
         "node-red-contrib-google-tts": "~1.1.1",

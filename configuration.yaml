@@ -43,54 +43,66 @@ system_health:
 
 mobile_app:
 
+shelly:
+  discovery: true  #add all devices (default)
+  sensors:
+    - all #show all sensors
+  devices:  #configure devices
+    - id: "7650cb"
+      name: Bryggers Flood #set friendly name
+
+google:
+  client_id: !secret google_calendar_id
+  client_secret: !secret google_calendar_secret
+
 # Include
 #########
 alarm_control_panel: !include resources/bwalarm/bwalarm.yaml
-vera: !include include_conf/conf_vera.yaml
+camera: !include include_conf/conf_camera.yaml
+cloud: !include include_conf/conf_cloud.yaml
+device_tracker: !include include_conf/conf_device_tracker.yaml
+garbage_collection: !include include_conf/conf_garbage.yaml
 hue: !include include_conf/conf_hue.yaml
-#mysensors: !include include_conf/conf_mysensors.yaml
+image_processing: !include include_conf/conf_imageprocessing.yaml
+influxdb: !include include_conf/conf_influxdb.yaml
+#mbweather: !include include_conf/conf_mbweather.yaml
+modbus: !include include_conf/conf_modbus.yaml
+netatmo: !include include_conf/conf_netatmo.yaml
+notify: !include include_conf/conf_notify.yaml
 panel_custom: !include include_conf/conf_panel_custom.yaml
 panel_iframe: !include include_conf/conf_panel_iframe.yaml
-notify: !include include_conf/conf_notify.yaml
-influxdb: !include include_conf/conf_influxdb.yaml
-device_tracker: !include include_conf/conf_device_tracker.yaml
-tts: !include include_conf/conf_tts.yaml
-recorder: !include include_conf/conf_recorder.yaml
-cloud: !include include_conf/conf_cloud.yaml
-#zoneminder: !include include_conf/conf_zoneminder.yaml
-camera: !include include_conf/conf_camera.yaml
-image_processing: !include include_conf/conf_imageprocessing.yaml
-netatmo: !include include_conf/conf_netatmo.yaml
-twilio: !include include_conf/conf_twilio.yaml
-repetier: !include include_conf/conf_repetier.yaml
-modbus: !include include_conf/conf_modbus.yaml
-unifi: !include include_conf/conf_unifi.yaml
 proximity: !include include_conf/conf_proximity.yaml
-mbweather: !include include_conf/conf_mbweather.yaml
-garbage_collection: !include include_conf/conf_garbage.yaml
+recorder: !include include_conf/conf_recorder.yaml
+repetier: !include include_conf/conf_repetier.yaml
 scene: !include scenes.yaml
+tts: !include include_conf/conf_tts.yaml
+twilio: !include include_conf/conf_twilio.yaml
+unifi: !include include_conf/conf_unifi.yaml
+vera: !include include_conf/conf_vera.yaml
+automation: !include automations.yaml
 
 # Include_list
 ##############
-automation: !include_dir_merge_list include_automations/
-light: !include_dir_merge_list include_lights/
-sensor: !include_dir_merge_list include_sensors/
-zone: !include_dir_merge_list include_zones/
+#automation: !include_dir_merge_list include_automations/
 binary_sensor: !include_dir_merge_list include_binary/
 cover: !include_dir_merge_list include_cover/
-switch: !include_dir_merge_list include_switch/
-media_player: !include_dir_merge_list include_media_player/
-vacuum: !include_dir_merge_list include_vacuum/
 display: !include_dir_merge_list include_display/
+light: !include_dir_merge_list include_lights/
+media_player: !include_dir_merge_list include_media_player/
+sensor: !include_dir_merge_list include_sensors/
+switch: !include_dir_merge_list include_switch/
+vacuum: !include_dir_merge_list include_vacuum/
+#zone: !include_dir_merge_list include_zones/
 
 # Include_named
 ###############
-input_select: !include_dir_merge_named include_input_select/
 group: !include_dir_merge_named include_groups/
-script: !include_dir_merge_named include_scripts/
 input_boolean: !include_dir_merge_named include_booleans/
+#input_datetime: !include_dir_merge_named include_datetime/
 input_number: !include_dir_merge_named include_numbers/
-# input_datetime: !include_dir_merge_named include_datetime/
+input_select: !include_dir_merge_named include_input_select/
+script: !include_dir_merge_named include_scripts/
+utility_meter: !include_dir_merge_named include_utility_meter/
 
 #landroid_cloud:
 #  email: !secret landroid_email
@@ -102,4 +114,3 @@ input_number: !include_dir_merge_named include_numbers/
 #    # log level for HA core
 #    homeassistant.core: warning
 #    homeassistant.components.cloud.google_config: debug
-

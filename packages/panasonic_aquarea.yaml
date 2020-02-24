@@ -22,7 +22,7 @@ automation:
   - alias: Set quiet level selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/QuietMode_Level"
+      topic: "panasonic_heat_pump/sdc/Quiet_Mode_Level"
     action:
       service: input_select.select_option
       data_template:
@@ -258,19 +258,19 @@ sensor:
   #TOP5 - Water inlet temp
   - platform: mqtt
     name: Panasonic Aquarea Inlet Temperature
-    state_topic: "panasonic_heat_pump/sdc/Water_Inlet_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Main_Inlet_Temp"
     unit_of_measurement: '°C'
 
   #TOP6 - Water outlet temp
   - platform: mqtt
     name: Panasonic Aquarea Outlet Temperature
-    state_topic: "panasonic_heat_pump/sdc/Water_Outlet_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Main_Outlet_Temp"
     unit_of_measurement: '°C'
 
   #TOP7 - Water outlet target temp
   - platform: mqtt
     name: Panasonic Aquarea Outlet Target Temperature
-    state_topic: "panasonic_heat_pump/sdc/Water_Target_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Main_Target_Temp"
     unit_of_measurement: '°C'
 
   #TOP8 - Compressor frequency
@@ -353,7 +353,7 @@ sensor:
   #TOP20 - 3-way valve state
   - platform: mqtt
     name: Panasonic Aquarea 3-way Valve
-    state_topic: "panasonic_heat_pump/sdc/ThreeWayValve_State"
+    state_topic: "panasonic_heat_pump/sdc/ThreeWay_Valve_State"
     value_template: >-
       {%- if value == "0" -%}
         Room
