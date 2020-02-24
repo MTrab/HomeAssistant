@@ -2,7 +2,3 @@ tasadmin:
   title: Tasmota Admin
   icon: mdi:lightbulb-on
   url: !secret tasadmin
-#ide:
-#  title: IDE
-#  icon: mdi:code-braces
-#  url: !secret hasside

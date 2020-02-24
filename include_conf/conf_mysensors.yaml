@@ -1,8 +1,0 @@
-gateways:
-- device: !secret mysensors_gateway
-  persistence_file: 'mysensors_tcp.json'
-  tcp_port: !secret mysensors_port
-optimistic: false
-persistence: true
-retain: true
-version: '2.0'

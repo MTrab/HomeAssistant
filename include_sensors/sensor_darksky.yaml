@@ -1,5 +1,5 @@
 - platform: darksky
-  api_key: e3c728d9f5827ebc7e4410fb5206d765
+  api_key: !secret darksky_api
   language: da
   monitored_conditions:
     - daily_summary

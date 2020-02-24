@@ -5,7 +5,3 @@
   
 - name: android
   platform: fcm-android
-
-- name: twilio_sms
-  platform: twilio_sms
-  from_number: +4592453302

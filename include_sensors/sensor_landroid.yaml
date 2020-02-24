@@ -109,9 +109,9 @@
         {% elif states.sensor.landroid_robotklipper_status.attributes.status_id == 1 %}
           Hjemme
           {%- if states.sensor.landroid_robotklipper_battery.attributes.charging == 1 -%}
-             {{ ' (Lader)' }}
+            {{ ' (Lader)' }}
           {%- elif states.sensor.landroid_robotklipper_error.attributes.error_id == 5 -%}
-             {{ ' (Regnvejr)' }}
+            {{ ' (Regnvejr)' }}
           {% endif %}
         {% elif states.sensor.landroid_robotklipper_error.attributes.error_id == 4 %}
           Udenfor tråden
