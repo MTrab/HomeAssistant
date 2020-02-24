@@ -10,13 +10,11 @@ homeassistant:
   packages: !include_dir_named packages
   whitelist_external_dirs:
     - /tmp
-    - /config/www/deepstack
 
 frontend:
   extra_html_url:
     - https://raw.githubusercontent.com/andrey-git/home-assistant-custom-ui/master/state-card-custom-ui.html
   themes: !include_dir_merge_named themes
-  #themes: !include_dir_merge_named include_themes/
 
 config:
 
@@ -64,7 +62,6 @@ device_tracker: !include include_conf/conf_device_tracker.yaml
 garbage_collection: !include include_conf/conf_garbage.yaml
 hue: !include include_conf/conf_hue.yaml
 influxdb: !include include_conf/conf_influxdb.yaml
-#mbweather: !include include_conf/conf_mbweather.yaml
 modbus: !include include_conf/conf_modbus.yaml
 netatmo: !include include_conf/conf_netatmo.yaml
 notify: !include include_conf/conf_notify.yaml
@@ -82,7 +79,6 @@ automation: !include automations.yaml
 
 # Include_list
 ##############
-#automation: !include_dir_merge_list include_automations/
 binary_sensor: !include_dir_merge_list include_binary/
 cover: !include_dir_merge_list include_cover/
 display: !include_dir_merge_list include_display/
@@ -91,12 +87,10 @@ media_player: !include_dir_merge_list include_media_player/
 sensor: !include_dir_merge_list include_sensors/
 switch: !include_dir_merge_list include_switch/
 vacuum: !include_dir_merge_list include_vacuum/
-#zone: !include_dir_merge_list include_zones/
 
 # Include_named
 ###############
 input_boolean: !include_dir_merge_named include_booleans/
-#input_datetime: !include_dir_merge_named include_datetime/
 input_number: !include_dir_merge_named include_numbers/
 input_select: !include_dir_merge_named include_input_select/
 script: !include_dir_merge_named include_scripts/
