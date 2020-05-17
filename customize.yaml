@@ -399,3 +399,15 @@ sensor.kam_v_p2:
   friendly_name: Spænding Fase 2
 sensor.kam_v_p3:
   friendly_name: Spænding Fase 3
+sensor.ingo_blyfri_92:
+  friendly_name: Blyfri 92
+  icon: mdi:gas-station
+sensor.ingo_blyfri_95:
+  friendly_name: Blyfri 95
+  icon: mdi:gas-station
+sensor.ingo_blyfri_98:
+  friendly_name: Blyfri 98
+  icon: mdi:gas-station
+sensor.ingo_diesel:
+  friendly_name: Diesel
+  icon: mdi:gas-station

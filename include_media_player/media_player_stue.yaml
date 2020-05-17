@@ -18,8 +18,8 @@
 - platform: philips_android_tv
   name: TV
   #host: 192.168.1.105
-  #host: 192.168.1.244
-  host: 10.254.254.244
+  host: 192.168.1.244
+  #host: 10.254.254.244
   mac: 3c:95:09:98:4f:bb
   #mac: 1c:5a:6b:d1:f0:68
   username: !secret androidtv_user

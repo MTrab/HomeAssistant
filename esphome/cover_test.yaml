@@ -1,0 +1,86 @@
+substitutions:
+  devicename: cover_test
+  upper_devicename: Test Cover
+  fallback: LC
+  platform: ESP8266
+  board: nodemcuv2
+  ip: 10.254.254.98
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+# in Home Assistant 
+api:
+  services:
+    - service: control_stepper
+      variables:
+        target: int
+      then:
+        - stepper.set_target:
+            id: my_stepper
+            target: !lambda 'return target;'
+
+ota:
+
+# physical connection
+stepper:
+  - platform: uln2003
+    id: my_stepper
+    pin_a: D1
+    pin_b: D2
+    pin_c: D3
+    pin_d: D7
+    max_speed: 400 steps/s
+    acceleration: 10
+    deceleration: 10
+    sleep_when_done: true
+    
+# items for Home Assistant 
+cover:
+  - platform: template
+    name: "Test Cover"
+    id: testcover
+
+    open_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: -11000
+
+    close_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: 11000
+
+    stop_action:
+      - stepper.set_target:
+          id: my_stepper
+          target: !lambda return id(my_stepper).current_position;      
+    optimistic: true  
+
+# for manual adjustment of the initial setting position
+switch:
+  - platform: template
+    name: "Step minus"
+    turn_on_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: -200
+  - platform: template
+    name: "Step plus"
+    turn_on_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: 200

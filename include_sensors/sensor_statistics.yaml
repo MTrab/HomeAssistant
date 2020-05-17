@@ -1,36 +1,36 @@
 - platform: statistics
   name: Gang Temperatur
-  entity_id: sensor.motion_gang_temperature
+  entity_id: sensor.motion_gang_temperatur
   max_age:
     minutes: 30
 
 - platform: statistics
   name: Bryggers Temperatur
-  entity_id: sensor.motion_bryggers_temperature
+  entity_id: sensor.motion_bryggers_temperatur
   max_age:
     minutes: 30
 
 - platform: statistics
   name: Stue Temperatur
-  entity_id: sensor.th_stue_temperature
+  entity_id: sensor.th_stue_temperatur
   max_age:
     minutes: 30
 
 - platform: statistics
   name: Stue Fugtighed
-  entity_id: sensor.th_stue_humidity
+  entity_id: sensor.th_stue_fugtighed
   max_age:
     minutes: 30
 
 - platform: statistics
   name: Badeværelse Temperatur
-  entity_id: sensor.th_bathroom_temperature
+  entity_id: sensor.th_badevaerelse_temperatur
   max_age:
     minutes: 30
 
 - platform: statistics
   name: Badeværelse Fugtighed
-  entity_id: sensor.th_bathroom_humidity
+  entity_id: sensor.th_badevaerelse_fugtighed
   max_age:
     minutes: 30
 

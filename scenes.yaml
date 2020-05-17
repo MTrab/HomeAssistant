@@ -2,155 +2,197 @@
   name: DR1
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '1'
       media_content_type: channel
       source: 📺 DR 1
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153502613'
   name: DR2
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '1'
       media_content_type: channel
       source: 📺 DR 2
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153590699'
   name: DR3
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '21'
       media_content_type: channel
       source: 📺 DR 3
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153642417'
   name: 6'eren
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '14'
       media_content_type: channel
       source: 📺 6'eren
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153666605'
   name: Animal Planet
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '50'
       media_content_type: channel
       source: 📺 Animal Planet
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153697756'
   name: Discovery Channel
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '17'
       media_content_type: channel
       source: 📺 Discovery Channel
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153804223'
   name: Kanal 4
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '10'
       media_content_type: channel
       source: 📺 Kanal 4
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153831648'
   name: Kanal 5
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '5'
       media_content_type: channel
       source: 📺 Kanal 5
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153892172'
   name: TV 2
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '2'
       media_content_type: channel
       source: 📺 TV 2 (Østjylland)
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575153991752'
   name: TV3
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '3'
       media_content_type: channel
       source: 📺 TV3
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575154037335'
   name: TV3 MAX
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '19'
       media_content_type: channel
       source: 📺 TV3 MAX
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
       source: TV
       state: 'on'
 - id: '1575154069386'
   name: TV3+
   entities:
     media_player.tv:
-      is_volume_muted: false
       media_content_id: '19'
       media_content_type: channel
       source: 📺 TV3+
       state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
     media_player.yamaha_receiver:
       is_volume_muted: false
+      volume_level: 0.65
+      source: TV
+      state: 'on'
+- id: '1584014688490'
+  name: TV2 News
+  entities:
+    media_player.tv:
+      app_name: 📺
+      friendly_name: TV
+      media_content_id: '8'
+      media_content_type: channel
+      source: 📺 TV 2 NEWS
+      state: 'on'
+      is_volume_muted: false
+      volume_level: 0.65
+    media_player.yamaha_receiver:
+      is_volume_muted: false
+      volume_level: 0.65
+      friendly_name: yamaha receiver
       source: TV
       state: 'on'

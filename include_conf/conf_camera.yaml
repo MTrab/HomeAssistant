@@ -39,3 +39,10 @@
   username: !secret bi_username
   password: !secret bi_password
   authentication: basic
+
+- platform: mjpeg
+  mjpeg_url: http://10.254.254.197:81/mjpg/baghave
+  name: Baghave
+  username: !secret bi_username
+  password: !secret bi_password
+  authentication: basic

@@ -1,0 +1,27 @@
+  - platform: scrape
+    name: Ingo Blyfri 92
+    resource: https://www.ingo.dk
+    select: ".gasprices4 .price"
+    index: 0
+    unit_of_measurement: 'kr'
+
+  - platform: scrape
+    name: Ingo Blyfri 95
+    resource: https://www.ingo.dk
+    select: ".gasprices4 .price"
+    index: 1
+    unit_of_measurement: 'kr'
+
+  - platform: scrape
+    name: Ingo Blyfri 98
+    resource: https://www.ingo.dk
+    select: ".gasprices4 .price"
+    index: 2
+    unit_of_measurement: 'kr'
+
+  - platform: scrape
+    name: Ingo Diesel
+    resource: https://www.ingo.dk
+    select: ".gasprices4 .price"
+    index: 3
+    unit_of_measurement: 'kr'

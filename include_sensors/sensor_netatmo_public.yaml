@@ -1,0 +1,13 @@
+#  - platform: netatmo
+#    areas:
+#      - lat_ne: !secret netatmo_public_lat_ne
+#        lon_ne: !secret netatmo_public_lon_ne
+#        lat_sw: !secret netatmo_public_lat_sw
+#        lon_sw: !secret netatmo_public_lon_sw
+#        monitored_conditions:
+#          - temperature
+#          - pressure
+#          - humidity
+#          - rain
+#          - windstrength
+#          - guststrength

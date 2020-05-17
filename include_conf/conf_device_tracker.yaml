@@ -6,6 +6,6 @@
 #     - 192.168.1.245
 #     - 192.168.1.199
 
-- platform: ping
-  hosts:
-    ping_mt_oneplus: 192.168.1.245
+# - platform: ping
+#   hosts:
+#     ping_mt_oneplus: 192.168.1.245

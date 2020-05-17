@@ -1,0 +1,64 @@
+substitutions:
+  devicename: rf_bridge
+  upper_devicename: RF Bridge
+  fallback: LC
+  platform: ESP8266
+  board: esp01_1m
+  ip: 10.254.254.99
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+binary_sensor:
+  - platform: status
+    name: Sonoff RF Bridge Status
+    
+#MT Remote
+  - platform: remote_receiver
+    name: Remote Lock
+    rc_switch_raw:
+      code: '011001111010011000100010'
+      protocol: 1
+    filters:
+      delayed_off: 1s
+
+  - platform: remote_receiver
+    name: Remote Unlock
+    rc_switch_raw:
+      code: '100010000000111001000001'
+      protocol: 1
+    filters:
+      delayed_off: 1s
+
+  - platform: remote_receiver
+    name: Remote Mute
+    rc_switch_raw:
+      code: '011001111010011000100001'
+      protocol: 1
+    filters:
+      delayed_off: 1s
+
+  - platform: remote_receiver
+    name: Remote Trunk
+    rc_switch_raw:
+      code: '011001111010011000100100'
+      protocol: 1
+    filters:
+      delayed_off: 1s
+
+remote_receiver:
+  pin: 4
+  dump: rc_switch
+  tolerance: 50
+  filter: 4us
+  idle: 4ms
+
+remote_transmitter:
+  pin: 5
+  carrier_duty_percent: 100%
+
+status_led:
+  pin:
+    number: GPIO13
+    inverted: yes

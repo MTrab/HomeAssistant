@@ -1,4 +1,0 @@
-host: !secret mb_host
-username: !secret mb_username
-password: !secret mb_password
-use_ssl: false

@@ -57,11 +57,13 @@ google:
 #########
 alarm_control_panel: !include resources/bwalarm/bwalarm.yaml
 camera: !include include_conf/conf_camera.yaml
+climate: !include include_conf/conf_climate.yaml
 cloud: !include include_conf/conf_cloud.yaml
 device_tracker: !include include_conf/conf_device_tracker.yaml
 garbage_collection: !include include_conf/conf_garbage.yaml
 hue: !include include_conf/conf_hue.yaml
 influxdb: !include include_conf/conf_influxdb.yaml
+landroid_cloud: !include include_conf/conf_landroid.yaml
 modbus: !include include_conf/conf_modbus.yaml
 netatmo: !include include_conf/conf_netatmo.yaml
 notify: !include include_conf/conf_notify.yaml
@@ -72,9 +74,6 @@ recorder: !include include_conf/conf_recorder.yaml
 repetier: !include include_conf/conf_repetier.yaml
 scene: !include scenes.yaml
 tts: !include include_conf/conf_tts.yaml
-twilio: !include include_conf/conf_twilio.yaml
-unifi: !include include_conf/conf_unifi.yaml
-vera: !include include_conf/conf_vera.yaml
 automation: !include automations.yaml
 
 # Include_list
@@ -95,10 +94,6 @@ input_number: !include_dir_merge_named include_numbers/
 input_select: !include_dir_merge_named include_input_select/
 script: !include_dir_merge_named include_scripts/
 utility_meter: !include_dir_merge_named include_utility_meter/
-
-#landroid_cloud:
-#  email: !secret landroid_email
-#  password: !secret landroid_pass
 
 #logger:
 #  default: warning

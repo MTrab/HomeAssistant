@@ -1,7 +1,7 @@
-- platform: template
-  sensors:
-    esxi_datastore_synology_nfs_1_free_pct:
-      friendly_name: "Ledig plads"
-      unit_of_measurement: '%'
-      value_template: >-
-        {{ '%0.0f' % ((states.sensor.esxi_datastore_synology_nfs_1.attributes.free_space_gb/states.sensor.esxi_datastore_synology_nfs_1.attributes.total_space_gb)*100) }}
+# - platform: template
+#   sensors:
+#     esxi_datastore_synology_nfs_1_free_pct:
+#       friendly_name: "Ledig plads"
+#       unit_of_measurement: '%'
+#       value_template: >-
+#         {{ '%0.0f' % ((states.sensor.esxi_datastore_synology_nfs_1.attributes.free_space_gb/states.sensor.esxi_datastore_synology_nfs_1.attributes.total_space_gb)*100) }}

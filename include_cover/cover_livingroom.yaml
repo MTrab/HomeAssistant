@@ -51,10 +51,10 @@
 
 - platform: mqtt
   name: "Stue Vindue"
-  command_topic: "rullegardin/Stue-Vindue/in"
-  state_topic: "rullegardin/Stue-Vindue/out"
-  position_topic: "rullegardin/Stue-Vindue/out"
-  set_position_topic: "rullegardin/Stue-Vindue/in"
+  command_topic: "rullegardin/Rullegardin-Stue/in"
+  state_topic: "rullegardin/Rullegardin-Stue/out"
+  position_topic: "rullegardin/Rullegardin-Stue/out"
+  set_position_topic: "rullegardin/Rullegardin-Stue/in"
   retain: false
   payload_open: "0"
   payload_close: "100"

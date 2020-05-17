@@ -88,7 +88,7 @@ automation:
   - alias: Set heatmode selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/OperatingMode_State"
+      topic: "panasonic_heat_pump/sdc/Operating_Mode_State"
     action:
       service: input_select.select_option
       data_template:
@@ -125,7 +125,7 @@ automation:
   - alias: Set heatshift selector
     trigger:
       platform: mqtt
-      topic: "panasonic_heat_pump/sdc/Z1_HeatRequest_Temp"
+      topic: "panasonic_heat_pump/sdc/Z1_Heat_Request_Temp"
     action:
       service: input_number.set_value
       data_template:
@@ -237,7 +237,7 @@ sensor:
   #TOP4 - Heat mode (Hot water, Heat or Hot water + heat)
   - platform: mqtt
     name: Panasonic Aquarea Mode
-    state_topic: "panasonic_heat_pump/sdc/OperatingMode_State"
+    state_topic: "panasonic_heat_pump/sdc/Operating_Mode_State"
     value_template: >-
       {%- if value == "0" -%}
         Heat
@@ -381,7 +381,7 @@ sensor:
   #TOP27 - Heatshift Temperature
   - platform: mqtt
     name: Panasonic Aquarea Heatshift Temperature
-    state_topic: "panasonic_heat_pump/sdc/Z1_HeatRequest_Temp"
+    state_topic: "panasonic_heat_pump/sdc/Z1_Heat_Request_Temp"
     unit_of_measurement: '°C'
 
   #TOP40 - DHW power produced
@@ -466,13 +466,13 @@ sensor:
   #TOP62 - Fan1 speed
   - platform: mqtt
     name: Panasonic Aquarea Fan 1 Speed
-    state_topic: "panasonic_heat_pump/sdc/Fan1Motor_Speed"
+    state_topic: "panasonic_heat_pump/sdc/Fan1_Motor_Speed"
     unit_of_measurement: "R/min"
 
   #TOP63 - Fan2 speed
   - platform: mqtt
     name: Panasonic Aquarea Fan 2 Speed
-    state_topic: "panasonic_heat_pump/sdc/Fan2Motor_Speed"
+    state_topic: "panasonic_heat_pump/sdc/Fan2_Motor_Speed"
     unit_of_measurement: "R/min"
 
   #TOP64 - High pressure

@@ -1,1 +1,24 @@
-- platform: netatmo
+- platform: generic_thermostat
+  name: vaerksted
+  heater: switch.fibaro_system_fgwpe_f_wall_plug_gen5_switch
+  target_sensor: sensor.th_vaerksted_temperature
+  target_temp: 20
+  min_cycle_duration:
+    minutes: 1
+
+# - platform: generic_thermostat
+#   name: "Værksted"
+#   heater: switch.fibaro_system_fgwpe_f_wall_plug_gen5_switch
+#   target_sensor: sensor.th_vaerksted_temperature
+#   min_temp: 7
+#   max_temp: 35
+#   ac_mode: false
+#   target_temp: 20
+#   cold_tolerance: 0.3
+#   hot_tolerance: 0.3
+#   min_cycle_duration:
+#     minutes: 1
+#   keep_alive:
+#     minutes: 15
+#   initial_hvac_mode: "heat"
+#   away_temp: 10

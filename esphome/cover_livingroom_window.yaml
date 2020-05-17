@@ -1,0 +1,89 @@
+substitutions:
+  devicename: cover_livingroom_window
+  upper_devicename: Stue Vindue
+  fallback: LC
+  platform: ESP8266
+  board: nodemcuv2
+  ip: 10.254.254.50
+  gateway: 10.254.254.1
+  subnet: 255.255.255.0
+
+<<: !include .common.yaml
+
+# in Home Assistant 
+api:
+  services:
+    - service: control_stepper
+      variables:
+        target: int
+      then:
+        - stepper.set_target:
+            id: my_stepper
+            target: !lambda 'return target;'
+
+web_server:
+  port: 80
+  
+# physical connection
+stepper:
+  - platform: uln2003
+    id: my_stepper
+    pin_a: D1
+    pin_b: D2
+    pin_c: D3
+    pin_d: D7
+    max_speed: 650 steps/s
+    acceleration: 100
+    deceleration: 100
+    sleep_when_done: true
+    
+# items for Home Assistant 
+cover:
+  - platform: template
+    name: "$upper_devicename"
+    id: $devicename
+
+    open_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: !lambda return id(my_stepper).current_position;
+      - stepper.set_target:
+          id: my_stepper
+          target: !lambda return 11000 - id(my_stepper).current_position;
+
+    close_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: !lambda return id(my_stepper).current_position;
+      - stepper.set_target:
+          id: my_stepper
+          target: !lambda return -11000 + id(my_stepper).current_position;
+
+    stop_action:
+      - stepper.set_target:
+          id: my_stepper
+          target: !lambda return id(my_stepper).current_position;      
+
+    optimistic: true
+    has_position: true
+
+# for manual adjustment of the initial setting position
+switch:
+  - platform: template
+    name: "Step minus"
+    turn_on_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: 200
+  - platform: template
+    name: "Step plus"
+    turn_on_action:
+      - stepper.report_position:
+          id: my_stepper
+          position: 0
+      - stepper.set_target:
+          id: my_stepper
+          target: -200
